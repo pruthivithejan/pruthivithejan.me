@@ -1,0 +1,16 @@
+---
+import Head from "./head.astro";
+import "../styles/global.css";
+
+const {
+  title = "Pruthivi Thejan",
+  description = "Personal website of Pruthivi Thejan",
+} = Astro.props;
+---
+
+<html lang="en">
+  <Head {title} {description} />
+  <body>
+    <slot>Default</slot>
+  </body>
+</html>
