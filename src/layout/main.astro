@@ -1,5 +1,10 @@
 ---
+//component imports
 import Head from "./head.astro";
+import Footer from "../components/footer.astro";
+import Nav from "../components/nav.astro";
+
+//style imports
 import "../styles/global.css";
 
 const {
@@ -11,6 +16,8 @@ const {
 <html lang="en">
   <Head {title} {description} />
   <body>
+    <Nav />
     <slot>Default</slot>
+    <Footer />
   </body>
 </html>
