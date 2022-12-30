@@ -1,7 +1,29 @@
 ---
+import Link from "../components/link.astro";
 import Main from "../layout/main.astro";
 ---
 
 <Main title="About">
-  <p>About</p>
+  <section class="container about" aria-label="About me">
+    <img
+      src="https://avatars.githubusercontent.com/pruthivithejan"
+      alt="Headshot"
+      width="200"
+      height="330"
+    />
+    <div class="content">
+      <h1 class="h1">My Blog</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
+        odit unde sint vero debitis enim eius ex, esse earum sequi voluptates
+        magnam consequuntur totam eum molestias error nam dolore cumque officia
+        nihil doloremque laudantium quidem reiciendis nobis. A, non ut.
+      </p>
+      <Link
+        href="mailto:1446073509@etlgr.com"
+        style="primary"
+        text="Contact Me"
+      />
+    </div>
+  </section>
 </Main>

@@ -1,0 +1,40 @@
+---
+import Link from "../components/link.astro";
+import Main from "../layout/main.astro";
+---
+
+<Main title="404">
+  <div
+    class="container"
+    style={{
+      display: "grid",
+      placeItems: "center",
+      textAlign: "center",
+      gap: "var(--space-sm)",
+    }}
+  >
+    <div>
+      <img
+        src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
+        alt="Error Image"
+        style={{
+          height: "200",
+          width: "350",
+          margin: "1rem",
+          borderRadius: "2.5rem",
+        }}
+      />
+      <h1 class="h1">Welp, this is awkward!</h1>
+      <p>It seems I have misplaced something…</p>
+    </div>
+    <Link
+      href="/"
+      style="secondary"
+      text="Go Home"
+      icon={{
+        name: "tabler:home",
+        side: "right",
+      }}
+    />
+  </div>
+</Main>

@@ -1,0 +1,17 @@
+---
+import Main from "./main.astro";
+import Posts from "../components/posts.astro";
+
+const { frontmatter } = Astro.props;
+const { title, description, date, category, author, image } = frontmatter;
+---
+
+<Main {title} {description}>
+  <Posts {title} {description} {date} {category} {author} {image} />
+  <div class="post-content">
+    <div class="content">
+      <slot />
+    </div>
+    <div class="sidebar"></div>
+  </div>
+</Main>
