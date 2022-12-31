@@ -1,17 +1,23 @@
 ---
+import PostCard from "../../components/postCard.astro";
 import Main from "../../layout/main.astro";
+
+const allPosts = await Astro.glob("./*.md");
 ---
 
 <Main title="Blog">
-  <ul>
-    <li>
-      <a href="./post-1">Post 1</a>
-    </li>
-    <li>
-      <a href="./post-2">Post 2</a>
-    </li>
-    <li>
-      <a href="./post-3">Post 3</a>
-    </li>
-  </ul>
+  <section class="container" aria-label="New Blog Posts">
+    <h1 class="h1">New Blog Posts</h1>
+    <div class="post-container">
+      {
+        allPosts.map((post) => (
+          <PostCard
+            frontmatter={post.frontmatter}
+            url={post.url}
+            TagType="h2"
+          />
+        ))
+      }
+    </div>
+  </section>
 </Main>
