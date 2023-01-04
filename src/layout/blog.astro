@@ -1,6 +1,7 @@
 ---
 import Main from "./main.astro";
 import Posts from "../components/posts.astro";
+import Category from "../components/category.astro";
 
 const { frontmatter } = Astro.props;
 const { title, description, date, category, author, image } = frontmatter;
@@ -12,6 +13,13 @@ const { title, description, date, category, author, image } = frontmatter;
     <div class="content">
       <slot />
     </div>
-    <div class="sidebar"></div>
+    <div class="sidebar">
+      <aside class="container" aria-label="Blog categories">
+        <a href="/blog/category/">
+          <h2 class="h3">Blog Categories</h2>
+        </a>
+        <Category showCount={false} />
+      </aside>
+    </div>
   </div>
 </Main>
