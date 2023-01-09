@@ -11,7 +11,7 @@ export async function getStaticPaths({ paginate }) {
   const formattedBlogPosts = formatBlogPosts(allPosts);
 
   return paginate(formattedBlogPosts, {
-    pageSize: 1,
+    pageSize: 2,
   });
 }
 
