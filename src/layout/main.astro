@@ -10,11 +10,14 @@ import "../styles/global.css";
 const {
   title = "Pruthivi Thejan",
   description = "Personal website of Pruthivi Thejan",
+  image,
+  frontmatter,
+  robots,
 } = Astro.props;
 ---
 
 <html lang="en">
-  <Head {title} {description} />
+  <Head {title} {description} {image} {frontmatter} {robots} />
   <body>
     <Nav />
     <main>

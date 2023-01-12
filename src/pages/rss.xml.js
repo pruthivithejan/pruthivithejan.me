@@ -5,7 +5,6 @@ const postImportResult = import.meta.glob('./blog/**/*.md', { eager: true });
 const posts =formatBlogPosts(Object.values(postImportResult));
 
 export const get = () => rss({
-  stylesheet: '/rss/styles.xsl',
   title: 'Pruthivi’s Blog',
   description: 'Blog of a boy named after the planet earth.',
   site: import.meta.env.SITE,

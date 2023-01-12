@@ -1,0 +1,8 @@
+{
+    "title": "My Personal Portfolio",
+    "description": "A note to myself and to everyone who will look into me.",
+    "image": {
+      "src": "/images/image-default.jpg",
+      "alt": "My Personal Portfolio"
+    }
+  }

@@ -7,7 +7,7 @@ import Related from "../components/related.astro";
 import { formatBlogPosts } from "../js/utils";
 
 const { frontmatter } = Astro.props;
-const { title, description, date, category, author, image } = frontmatter;
+const { title, description, date, category, author } = frontmatter;
 
 const allPosts = await Astro.glob("../pages/blog/*.md");
 const formattedBlogPosts = formatBlogPosts(allPosts, {
@@ -24,7 +24,16 @@ const relatedPosts = formattedBlogPosts
 ---
 
 <Main {title} {description}>
-  <Posts {title} {description} {date} {category} {author} {image} />
+  <Posts
+    {title}
+    {description}
+    {date}
+    {category}
+    {author}
+    image={frontmatter.image}
+    {frontmatter}
+    robots={frontmatter.robots}
+  />
   <div class="post-content">
     <div class="content">
       <slot />
