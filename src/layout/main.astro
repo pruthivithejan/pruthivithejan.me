@@ -1,11 +1,9 @@
 ---
+import "../styles/global.css"
 //component imports
 import Head from "./head.astro";
 import Footer from "../components/footer.astro";
 import Nav from "../components/nav.astro";
-
-//style imports
-import "../styles/global.css";
 
 const {
   title = "Pruthivi Thejan",
@@ -18,7 +16,7 @@ const {
 
 <html lang="en">
   <Head {title} {description} {image} {frontmatter} {robots} />
-  <body>
+  <body class="max-w-6xl mx-auto bg-neutral-900">
     <Nav />
     <main>
       <slot>Default</slot>
