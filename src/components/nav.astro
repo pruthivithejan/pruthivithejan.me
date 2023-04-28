@@ -5,6 +5,10 @@ import { Icon } from "astro-icon";
 import navData from "../data/navData";
 //components imports
 import Link from "./link.astro";
+
+
+
+
 ---
 
 <nav class="text-white font-trap">
@@ -30,4 +34,11 @@ import Link from "./link.astro";
 
 <script>
   import "../js/nav.js";
+  const links = document.querySelectorAll('nav a');
+
+  links.forEach((link: HTMLAnchorElement) => {
+  if (link.href === window.location.href) {
+    link.classList.add('font-bold', 'text-blue-500');
+  }
+});
 </script>
