@@ -4,36 +4,24 @@ import Main from "../layout/main.astro";
 ---
 
 <Main title="Error 404">
-  <div
-    class="container"
-    style={{
-      display: "grid",
-      placeItems: "center",
-      textAlign: "center",
-      gap: "var(--space-sm)",
-    }}
-  >
+  <div class="flex flex-col items-center justify-center h-screen text-white mx-auto font-body max-w-lg" >
+    <h1 class="text-6xl font-heading">404</h1>
     <div>
       <img
         src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
         alt="Error Image"
-        style={{
-          height: "200",
-          width: "350",
-          margin: "1rem",
-          borderRadius: "2.5rem",
-        }}
+        class="m-4 w-[450px] rounded-xl"
       />
-      <h1 class="h1">Welp, this is awkward!</h1>
-      <p>It seems I have misplaced something…</p>
+      <h1 class=" text-center text-3xl font-bold ">Welp, this is awkward!</h1>
+      <p class=" text-center">It seems I have misplaced something…</p>
     </div>
     <Link
       href="/"
-      style="secondary"
+      classes="flex m-4 p-2 border rounded-lg font-bold"
       text="Go Home"
       icon={{
         name: "tabler:home",
-        side: "right",
+        side: "left",
       }}
     />
   </div>
