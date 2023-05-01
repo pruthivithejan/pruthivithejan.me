@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        trap: ["Trap"],
-        stretch: ["Stretch Pro"],
+        body: ["Trap"],
+        heading: ["Stretch Pro"],
       },
     },
   },

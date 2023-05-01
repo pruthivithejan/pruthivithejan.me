@@ -19,9 +19,10 @@ const { page } = Astro.props;
 ---
 
 <Main title="Pruthivi Thejan | Blog">
-  <section class="container text-white" aria-label="New Blog Posts">
-    <h1 class="h1">New Blog Posts</h1>
-    <div class="post-container">
+  <section class="mt-24 text-white" aria-label="New Blog Posts">
+    <h1 class="font-heading text-6xl">Blog Poosts</h1>
+    <p class="mt-7 text-2xl font-body">In the near Future all the blogs going be written by AI. But this blog will be written by me. all the grammar mistakes and incorrect spellings aside, i’m going to improve my knowledge and writing skills. we can have a huge ‘quantity’ of posts with us using AI, we will always favour ‘quality’ in the long run.</p>
+    <div class="grid gap-4 grid-cols-3 grid-rows-3 mt-24">
       {
         page.data.map((post) => (
           <PostCard
