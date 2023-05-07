@@ -8,11 +8,11 @@ const { frontmatter, url, TagType } = Astro.props;
 
 const Tag = TagType;
 
-const { category, title, author, date, image, description } = frontmatter;
+const { category, title, date, image, description } = frontmatter;
 ---
 
-<article class="flex flex-col border">
-  <a href={url} aria-hidden="true" tabindex="-1">
+<article class="flex flex-col border rounded-lg p-2.5 font-body">
+  <a href={url} aria-hidden="true" tabindex="-1" >
     <Image
       src={image.src}
       alt={image.alt}
@@ -22,22 +22,25 @@ const { category, title, author, date, image, description } = frontmatter;
       fit="cover"
       quality={100}
       aspectRatio="4:1"
+      class="rounded"
     />
   </a>
-  <small>
-    <a href={`/blog/category/${slugify(category)}/`} class="badge">{category}</a
-    >
-  </small>
   <div class="content">
     <div>
-      <Tag class="h3"><a href={url}>{title}</a></Tag>
-      <small>
-        by <a href={`/author/${slugify(author)}/`}>{author}</a> | {
-          formatDate(date)
-        }
-      </small>
+      <Tag class=" text-3xl font-bold max-w-prose pt-2.5"><a href={url}>{title}</a></Tag>
+       <div class="mb-2 mt-2">
+          <small>
+            <a href={`/blog/category/${slugify(category)}/`} class="border-t-[2px] border-x-[1px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md font-semibold py-1.5 px-3">#{category}</a>
+          </small>
+          &#8226;
+          <small>
+            {
+              formatDate(date)
+            }
+          </small>
+      </div> 
     </div>
-    <p>{description}</p>
-    <Link href={url} text="Read Post" style="secondary" />
+    <p class="text-base line-clamp-3 leading-5">{description}</p>
+    <Link href={url}  text="Read Post" classes="mt-3 text-black font-bold rounded-md bg-gradient-to-b from-neutral-300 to-neutral-400 py-1.5 px-3 " />
   </div>
 </article>
