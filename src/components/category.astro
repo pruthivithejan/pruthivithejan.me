@@ -1,5 +1,5 @@
 ---
-import { formatBlogPosts, slugify } from "../js/utils";
+import { formatBlogPosts, slugify } from "../lib/utils";
 import Link from "./link.astro";
 
 const allPosts = await Astro.glob("../pages/blog/*.md");
@@ -20,11 +20,11 @@ const processedCategories = allCategories.reduce((acc, category) => {
 const { showCount } = Astro.props;
 ---
 
-<ul class="categories">
+<ul class="flex gap-2 ">
   {
     Object.entries(processedCategories).map(([key, val]) => (
       <li>
-        <a href={`/blog/category/${slugify(key)}`} class="badge">
+        <a href={`/blog/category/${slugify(key)}`} class="hover:underline">
           {key}
           {showCount && `(${val})`}
         </a>

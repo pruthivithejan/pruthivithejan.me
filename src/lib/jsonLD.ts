@@ -1,10 +1,26 @@
-
-import siteData from "../data/siteData.json"
+import siteData from "../data/siteData.json";
 import { slugify } from "./utils";
 
+interface Post {
+  title: string;
+  description: string;
+  image: { src: string };
+  author: string;
+  date: string;
+}
 
-export default function jsonLDGenerator({ type, post, url }) {
-  if (type === 'post') {
+interface JsonLDGeneratorProps {
+  type: "post" | "website";
+  post?: Post;
+  url?: string;
+}
+
+export default function jsonLDGenerator({
+  type,
+  post,
+  url,
+}: JsonLDGeneratorProps): string {
+  if (type === "post" && post) {
     return `<script type="application/ld+json">
       {
         "@context": "https://schema.org",

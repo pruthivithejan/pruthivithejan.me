@@ -16,7 +16,7 @@ import Link from "./link.astro";
     <a href="/" class="logomark" aria-label="Go home">
       <Icon name="logomark" width="40" />
     </a>
-    <ul class="flex flex-row gap-11 text-xl">
+    <ul class="flex flex-row gap-11 text-xl items-center">
       {
         navData.map((item) => (
           <Link
@@ -29,10 +29,19 @@ import Link from "./link.astro";
       }
     </ul>
   </div>
+  <div class="lg:hidden sm:flex md:flex max-w-6xl mx-auto fixed backdrop-blur-sm z-50 top-0 left-0 right-0 h-20 shadow-sm items-center justify-center px-8">
+    <ul class="flex flex-row gap-11 text-xl items-center">
+      {
+        navData.map((item) => (
+          <a href={item.path}><Icon name={item.icon} width="32" class="text-white" /></a>
+        ))
+      }
+    </ul>
+  </div>
 </nav>
 
 <script>
-  import "../js/nav.js";
+  import "../lib/nav.js";
   const links = document.querySelectorAll('ul a');
 
   links.forEach((link: HTMLAnchorElement) => {

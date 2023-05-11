@@ -4,7 +4,7 @@ import PostCard from "../../components/postCard.astro";
 import Pagination from "../../components/pagination.astro";
 import Category from "../../components/category.astro";
 
-import { formatBlogPosts } from "../../js/utils";
+import { formatBlogPosts } from "../../lib/utils";
 
 export async function getStaticPaths({ paginate }) {
   const allPosts = await Astro.glob("./*.md");
@@ -18,11 +18,11 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<Main title="Pruthivi Thejan | Blog">
+<Main title="Pruthivi Thejan | Blog" >
   <section class="mt-24 text-white" aria-label="New Blog Posts">
     <h1 class="font-heading text-6xl">Blog PPosts</h1>
     <p class="mt-7 text-2xl font-body">In the near Future all the blogs going be written by AI. But this blog will be written by me. all the grammar mistakes and incorrect spellings aside, i’m going to improve my knowledge and writing skills. we can have a huge ‘quantity’ of posts with us using AI, we will always favour ‘quality’ in the long run.</p>
-    <div class="grid gap-4 grid-cols-3 grid-rows-3 mt-24">
+    <div class="grid gap-4 grid-cols-1 grid-rows-3 md:grid-cols-2 lg:grid-cols-3 mt-24">
       {
         page.data.map((post) => (
           <PostCard
@@ -35,9 +35,9 @@ const { page } = Astro.props;
     </div>
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
-  <aside class="container" aria-label="Blog categories">
+  <aside class="text-white font-body flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">
     <a href="/blog/category/">
-      <h2 class="h3">Blog Categories</h2>
+      <h2 class="text-md font-semibold uppercase ">Blog Categories</h2>
     </a>
     <Category showCount={true} />
   </aside>
