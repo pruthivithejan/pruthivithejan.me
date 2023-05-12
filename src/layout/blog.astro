@@ -34,21 +34,21 @@ const relatedPosts = formattedBlogPosts
     {frontmatter}
     robots={frontmatter.robots}
   />
-  <div class="post-content">
-    <div class="content">
+  <div class="py-6">
+    <div class="text-white font-body">
       <slot />
     </div>
-    <div class="sidebar">
-      <aside class="container" aria-label="Blog categories">
+    <div class="py-6">
+      <aside class="text-white font-body flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">
         <a href="/blog/category/">
-          <h2 class="h3">Blog Categories</h2>
+          <h2 class="text-md font-semibold uppercase">Blog Categories</h2>
         </a>
         <Category showCount={false} />
       </aside>
       {
         relatedPosts.length > 0 && (
-          <aside class="container" aria-label="Related categories">
-            <h2 class="h3">Related Posts</h2>
+          <aside class="text-white font-body flex justify-center gap-2 flex-row p-4" aria-label="Related categories">
+            <h2 class="text-md font-semibold uppercase">Related Posts</h2>
             <Related {relatedPosts} />
           </aside>
         )

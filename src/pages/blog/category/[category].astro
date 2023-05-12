@@ -34,8 +34,8 @@ const catPosts = formattedPosts.filter(
 ---
 
 <Main title={name}>
-  <section class="container" aria-label={`Posts about ${name}`}>
-    <h1 class="h1">Posts about <span>{name}</span></h1>
+  <section class="mt-24 text-white font-body" aria-label={`Posts about ${name}`}>
+    <h1 class="text-3xl">Posts about <span>{name}</span></h1>
     <div class="post-container">
       {
         catPosts.map((post) => (

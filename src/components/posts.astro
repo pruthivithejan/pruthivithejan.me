@@ -7,18 +7,19 @@ const { category, title, author, date, image } = Astro.props;
 ---
 
 <header>
-  <div class="container text-white">
+  <div class="mt-24 text-white font-body pb-4">
+    <h1 class="text-5xl font-bold">{title}</h1>
     <small>
-      <a href={`/blog/category/${slugify(category)}/`} class="badge"
+      <a href={`/blog/category/${slugify(category)}/`} class="border-t-[2px] border-x-[1px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md font-semibold py-1.5 px-3"
         >{category}</a
       >
     </small>
-    <h1 class="h2">{title}</h1>
-    <p>
-      by <a href={`/author/${slugify(author)}/`}>{author}</a> | {
+    &#8226;
+    <small class="text-sm">
+      {
         formatDate(date)
       }
-    </p>
+    </small>
   </div>
   <Image
     src={image.src}
@@ -29,6 +30,6 @@ const { category, title, author, date, image } = Astro.props;
     fit="cover"
     quality={80}
     aspectRatio="5:2"
-    class="hero-image"
+    class="rounded-md"
   />
 </header>
