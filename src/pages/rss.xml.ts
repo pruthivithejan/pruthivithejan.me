@@ -1,8 +1,10 @@
+import { getCollection, CollectionEntry } from "astro:content";
+
 import rss from "@astrojs/rss";
 import { formatBlogPosts } from "../lib/utils";
 
-const postImportResult = import.meta.glob("./blog/**/*.md", { eager: true });
-const posts = formatBlogPosts(Object.values(postImportResult));
+const postImportResult = await getCollection("blog");
+const posts: CollectionEntry<"blog">[] = formatBlogPosts(postImportResult);
 
 export const get = () =>
   rss({
@@ -10,10 +12,10 @@ export const get = () =>
     description: "Blog of a boy named after the planet earth.",
     site: import.meta.env.SITE,
     items: posts.map((post) => ({
-      link: post.url,
-      title: post.frontmatter.title,
-      pubDate: post.frontmatter.date,
-      description: post.frontmatter.description,
+      link: post.slug,
+      title: post.data.title,
+      pubDate: post.data.date,
+      description: post.data.description,
       customData: `
      <author>Pruthivi Thejan</author>
     `,

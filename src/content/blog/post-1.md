@@ -1,9 +1,7 @@
 ---
-layout: "../../layout/blog.astro"
 title: A Post about Important Items Of Life
 date: 2022-11-20
-author: Darnell McClure
-image: { src: "/images/post-1.jpg", alt: "A picture of a coder" }
+image: { src: "/images/post-1.png", alt: "A picture of a coder" }
 description: Have you ever wondered what the most important items of life are? Well, wonder no more!
 draft: false
 category: Reference Docs

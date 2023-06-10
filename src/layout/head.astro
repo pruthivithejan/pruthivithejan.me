@@ -1,7 +1,7 @@
 ---
 import Seo from "../components/seo.astro";
 
-const { title, description, image, frontmatter, robots } = Astro.props;
+const { title, description, image, data, robots } = Astro.props;
 ---
 
 <head>
@@ -11,5 +11,5 @@ const { title, description, image, frontmatter, robots } = Astro.props;
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <Seo {title} {description} url={Astro.url} {image} {frontmatter} {robots} />
+  <Seo {title} {description} url={Astro.url} {image} {data} {robots} />
 </head>

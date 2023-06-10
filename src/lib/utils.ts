@@ -32,7 +32,7 @@ export function formatBlogPosts(
   }: FormatBlogPostsOptions = {}
 ): any[] {
   const filteredPosts = posts.reduce((acc, post) => {
-    const { date, draft } = post.frontmatter;
+    const { date, draft } = post.data;
     // filterOutDrafts if true
     if (filterOutDrafts && draft) return acc;
 
@@ -49,8 +49,7 @@ export function formatBlogPosts(
   if (sortByDate) {
     filteredPosts.sort(
       (a, b) =>
-        new Date(b.frontmatter.date).getTime() -
-        new Date(a.frontmatter.date).getTime()
+        new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
     );
   } else {
     filteredPosts.sort(() => Math.random() - 0.5);

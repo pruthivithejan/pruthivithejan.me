@@ -1,11 +1,12 @@
 ---
+import {getCollection, CollectionEntry } from "astro:content"
 import { formatBlogPosts, slugify } from "../lib/utils";
 import Link from "./link.astro";
 
-const allPosts = await Astro.glob("../pages/blog/*.md");
-const formattedBlogPosts = formatBlogPosts(allPosts);
+const allPosts = await getCollection("blog");
+const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts);
 const allCategories = formattedBlogPosts
-  .map((ctgr) => ctgr.frontmatter.category.toLowerCase())
+  .map((ctgr) => ctgr.data.category.toLowerCase())
   .flat();
 
 const processedCategories = allCategories.reduce((acc, category) => {

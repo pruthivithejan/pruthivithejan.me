@@ -4,15 +4,15 @@ import { Image } from "@astrojs/image/components";
 import { slugify, formatDate } from "../lib/utils";
 import Link from "./link.astro";
 
-const { frontmatter, url, TagType } = Astro.props;
+const { data, url, TagType } = Astro.props;
 
 const Tag = TagType;
 
-const { category, title, date, image, description } = frontmatter;
+const { category, title, date, image, description } = data;
 ---
 
 <article class="flex flex-col border rounded-lg p-2.5 font-body">
-  <a href={url} aria-hidden="true" tabindex="-1" >
+  <a href=`/blog/${url}/` aria-hidden="true" tabindex="-1" >
     <Image
       src={image.src}
       alt={image.alt}
