@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Trap"],
+        body: ["Nohemi"],
         heading: ["Stretch Pro"],
       },
     },

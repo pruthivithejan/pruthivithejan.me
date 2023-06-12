@@ -11,36 +11,45 @@ const Tag = TagType;
 const { category, title, date, image, description } = data;
 ---
 
-<article class="flex flex-col border rounded-lg p-2.5 font-body">
-  <a href=`/blog/${url}/` aria-hidden="true" tabindex="-1" >
-    <Image
-      src={image.src}
-      alt={image.alt}
-      width="400"
-      height="250"
-      format="webp"
-      fit="cover"
-      quality={100}
-      aspectRatio="4:1"
-      class="rounded"
-    />
-  </a>
-  <div class="content">
-    <div>
-      <Tag class=" text-3xl font-bold max-w-prose pt-2.5"><a href={url}>{title}</a></Tag>
-       <div class="mb-2 mt-2">
+<article class="flex flex-col rounded-lg font-body w-full bg-gradient-to-b from-neutral-50 via-neutral-500 to-neutral-800 p-px">
+  <div class="bg-neutral-900 h-full rounded-lg px-2.5 pb-14 relative">
+    <a href="/blog/${url}/" aria-hidden="true" tabindex="-1">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width="400"
+        height="250"
+        format="webp"
+        fit="cover"
+        quality={100}
+        aspectRatio="4:1"
+        class="rounded-lg"
+      />
+    </a>
+    <div class="content">
+      <div>
+        <Tag class="text-3xl font-medium max-w-prose pt-2.5">
+          <a href={url}>{title}</a>
+        </Tag>
+        <div class="mb-2 mt-2">
           <small>
-            <a href={`/blog/category/${slugify(category)}/`} class="border-t-[2px] border-x-[1px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md font-semibold py-1.5 px-3">#{category}</a>
+            <a href={`/blog/category/${slugify(category)}/`} class="border-t-[2px] border-x-[1px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md font-medium py-1.5 px-3">
+              #{category}
+            </a>
           </small>
-          &#8226;
+            &nbsp;
+            &#8226; 
+            &nbsp;
           <small>
-            {
-              formatDate(date)
-            }
+            {formatDate(date)}
           </small>
-      </div> 
+        </div>
+        <p class="text-base font-normal leading-5 line-clamp-2">{description}</p>
+      </div>
+      <div class="absolute bottom-0 left-0 pl-2 pb-3">
+          <Link href={url} text="Read Post" classes="text-black font-bold rounded-md bg-neutral-50 py-2 px-3" />
+      </div>
     </div>
-    <p class="text-base line-clamp-3 leading-5">{description}</p>
-    <Link href={url}  text="Read Post" classes="mt-3 text-black font-bold rounded-md bg-gradient-to-b from-neutral-300 to-neutral-400 py-1.5 px-3 " />
   </div>
 </article>
+
