@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         body: ["Nohemi"],
-        heading: ["Stretch Pro"],
+        heading: ["Staatliches"],
       },
     },
   },

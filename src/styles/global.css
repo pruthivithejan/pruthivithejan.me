@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Fonts */
 @layer base {
   @font-face {
     font-family: Nohemi;
@@ -13,7 +14,6 @@
     font-weight: 200;
     src: url(/fonts/Nohemi-Thin.woff2) format("woff2");
   }
-
   @font-face {
     font-family: Nohemi;
     font-weight: 300;
@@ -50,45 +50,22 @@
     src: url(/fonts/Nohemi-Black.woff2) format("woff2");
   }
   @font-face {
-    font-family: Stretch Pro;
-    src: url(/fonts/StretchPro.woff2) format("woff2");
+    font-family: Staatliches;
+    font-weight: 400;
+    src: url(/fonts/Staatliches-Regular.woff2) format("woff2");
   }
 }
 
-/* 
-  @font-face {
-    font-family: Trap;
-    font-weight: 300;
-    src: url(/fonts/Trap-Light.woff2) format("woff2");
-  }
-  @font-face {
-    font-family: Trap;
-    font-weight: 400;
-    src: url(/fonts/Trap-Regular.woff2) format("woff2");
-  }
-  @font-face {
-    font-family: Trap;
-    font-weight: 500;
-    src: url(/fonts/Trap-Medium.woff2) format("woff2");
-  }
-  @font-face {
-    font-family: Trap;
-    font-weight: 600;
-    src: url(/fonts/Trap-SemiBold.woff2) format("woff2");
-  }
-  @font-face {
-    font-family: Trap;
-    font-weight: 700;
-    src: url(/fonts/Trap-Bold.woff2) format("woff2");
-  }
-  @font-face {
-    font-family: Trap;
-    font-weight: 800;
-    src: url(/fonts/Trap-ExtraBold.woff2) format("woff2");
-  }
-  @font-face {
-    font-family: Trap;
-    font-weight: 900;
-    src: url(/fonts/Trap-Black.woff2) format("woff2");
-  }
-*/
+/* Customize the ScrollBar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a3a3a3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e5e5e5;
+}

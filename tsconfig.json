@@ -4,5 +4,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true
+  },
+  "paths": {
+    "@/*": ["./*"],
+    "@/components": ["./components/*"]
   }
 }
