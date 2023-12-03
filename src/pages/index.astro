@@ -1,9 +1,21 @@
 ---
 import Main from "../layout/main.astro";
+import { Image } from 'astro:assets';
 ---
 
 <Main title="Pruthivi Thejan">
-  <div class="h-screen text-white font-heading mt-16">
+  <div class="h-screen text-white font-heading mt-16 text-center">
+    <div class="flex justify-center items-center mb-10">
+      <div class=" grayscale flex justify-center items-center w-64 h-64 p-2 ml-4 origin-center transform scale-100 bg-clip-content overflow-hidden rounded-lg shadow-sm shadow-neutral-50 thirteen">
+        <Image
+          src={`https://avatars.githubusercontent.com/pruthivithejan`}
+          alt="Avatar"
+          class="rounded-md"
+          width=280
+          height=280
+        />
+      </div>
+    </div>
      <h1 class="text-6xl">Pruthvi Thejan</h1>
      <h1 class="text-6xl font-body">Designer & Developer</h1>
      <div class="container py-10">

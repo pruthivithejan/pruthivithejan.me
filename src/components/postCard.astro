@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 
 import { slugify, formatDate } from "../lib/utils";
 import Link from "./link.astro";
@@ -19,6 +19,8 @@ const { category, title, date, image, description } = data;
         alt={image.alt}
         width="400"
         height="250"
+        decoding="async"
+        loading="lazy"
         format="webp"
         fit="cover"
         quality={100}

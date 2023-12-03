@@ -11,14 +11,15 @@ import Link from "./link.astro";
 
 <div class="flex justify-center">
   <nav class="fixed bottom-4 z-50">
-    <ul class="flex flex-row gap-2.5 items-center font-body font-medium text-2xl rounded-full backdrop-blur-2xl border bg-neutral-400/75">
-      <li class="px-5 py-3">{
+    <ul class="flex flex-row gap-2.5 items-center font-body font-medium text-base sm:text-lg md:text-xl lg:text-2xl rounded-lg backdrop-blur-2xl border bg-neutral-400/75">
+      <li class="px-1 py-3 ">{
         navData.map((item) => (
           <Link
             text={item.name}
             href={item.path}
             isFilled={false}
             data-navLink
+            classes="px-5"
           />
         ))
       }
@@ -27,15 +28,13 @@ import Link from "./link.astro";
   </nav>
 </div>
 
-
-
 <script>
   import "../lib/nav.js";
   const links = document.querySelectorAll('ul a');
 
   links.forEach((link: HTMLAnchorElement) => {
-  if (link.href === window.location.href) {
-    link.classList.add('bg-neutral-50','rounded-full', 'font-bold', 'py-3', 'px-5');
-  }
-});
+    if (link.href === window.location.href) {
+      link.classList.add('bg-neutral-50', 'rounded-md', 'font-bold', 'py-3', 'px-5');
+    }
+  });
 </script>
