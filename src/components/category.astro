@@ -1,7 +1,7 @@
 ---
 import {getCollection, CollectionEntry } from "astro:content"
 import { formatBlogPosts, slugify } from "../lib/utils";
-import Link from "./link.astro";
+import Link from "./Link.astro";
 
 const allPosts = await getCollection("blog");
 const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts);
