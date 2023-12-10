@@ -7,9 +7,10 @@ import Link from "./Link.astro";
 
 
 
+
 ---
 
-<div class="flex justify-center">
+<div class="flex justify-center" >
   <nav class="fixed bottom-4 z-50">
     <ul class="flex flex-row gap-2.5 items-center font-body font-medium text-base sm:text-lg md:text-xl lg:text-2xl rounded-lg backdrop-blur-2xl border bg-neutral-400/75">
       <li class="px-1 py-3 ">{
@@ -31,9 +32,11 @@ import Link from "./Link.astro";
 <script>
   import "../lib/nav.js";
   const links = document.querySelectorAll('ul a');
+  import { navigate } from 'astro:transitions/client';
 
   links.forEach((link: HTMLAnchorElement) => {
     if (link.href === window.location.href) {
+      navigate(link.href);
       link.classList.add('bg-neutral-50', 'rounded-md', 'font-bold', 'py-3', 'px-5');
     }
   });

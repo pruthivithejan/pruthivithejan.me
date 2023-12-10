@@ -1,6 +1,8 @@
 ---
 import Link from "../components/Link.astro";
 import Main from "../layout/main.astro";
+
+import { Button } from "@/components/ui/button";
 ---
 
 <Main title="Error 404">
@@ -15,14 +17,8 @@ import Main from "../layout/main.astro";
       <h1 class=" text-center text-3xl font-bold ">Welp, this is awkward!</h1>
       <p class=" text-center">It seems I have misplaced something…</p>
     </div>
-    <Link
-      href="/"
-      classes="flex m-4 p-2 border rounded-lg font-bold"
-      text="Go Home"
-      icon={{
-        name: "tabler:home",
-        side: "left",
-      }}
-    />
+    <Button asChild variant="link">
+      <a href="/">Go Home</a>
+    </Button>
   </div>
 </Main>

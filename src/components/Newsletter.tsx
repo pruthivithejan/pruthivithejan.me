@@ -1,22 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+import { Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 function Newsletter() {
+  const externalId = "LK_" + Date.now();
+
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [formStatus, setFormStatus] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setLoading(true);
+    setFormStatus("");
 
     fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
       headers: {
         Accept: "application/json",
-        "Api-Key":
-          "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",
+        "Api-Key": import.meta.env.PUBLIC_BREVO_API_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: email,
-        ext_id: "externalId",
+        ext_id: externalId,
         attributes: { FNAME: "", LNAME: "" },
         emailBlacklisted: false,
         smsBlacklisted: false,
@@ -26,8 +35,14 @@ function Newsletter() {
       }),
     })
       .then((res) => res.json())
+      .then((response) => console.log(response))
       .then((data) => {
-        console.log(data);
+        setLoading(false);
+        setFormStatus("success");
+      })
+      .catch(() => {
+        setLoading(false);
+        setFormStatus("error");
       });
   };
 
@@ -57,12 +72,19 @@ function Newsletter() {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
               />
-              <button
+              <Button
                 type="submit"
                 className="flex-none rounded-md bg-neutral-200 px-3.5 py-2.5 text-sm font-semibold text-neutral-900 shadow-sm hover:bg-neutral-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:neutral-indigo-500"
               >
-                Subscribe
-              </button>
+                {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                Subscribe &nbsp;
+                {formStatus === "success" && (
+                  <span className="text-green-500">Successful</span>
+                )}
+                {formStatus === "error" && (
+                  <span className="text-red-500">Fail</span>
+                )}
+              </Button>
             </div>
           </div>
         </div>
