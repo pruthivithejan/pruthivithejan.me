@@ -7,10 +7,13 @@ interface Props {
   icon?: {
     name: string;
     side: "left" | "right";
+    height?: string;
+    width?: string;
   };
   isFilled?: boolean;
   borderVisible?: boolean;
   classes?: string;
+  target?: string;
 }
 
 const {
@@ -20,6 +23,7 @@ const {
   isFilled = true,
   borderVisible = false,
   classes,
+  target,
   ...rest
 } = Astro.props as Props;
 ---
@@ -32,16 +36,17 @@ const {
     { filled: isFilled, bordered: borderVisible },
   ]}
   {...rest}
+  target={target}
 >
   {
     icon && icon.side === "left" && (
-      <Icon name={icon.name} height="24" width="24" />
+      <Icon name={icon.name} height={icon.width} width={icon.height} />
     )
   }
   <span>{text}</span>
   {
     icon && icon.side === "right" && (
-      <Icon name={icon.name} height="24" width="24" />
+      <Icon name={icon.name} height={icon.width} width={icon.height} />
     )
   }
 </a>

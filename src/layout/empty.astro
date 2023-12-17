@@ -1,0 +1,24 @@
+---
+import "../styles/global.css"
+//component imports
+import Head from "./head.astro";
+import Nav from "../components/Nav.astro";
+
+const {
+  title = "Pruthivi Thejan",
+  description = "Personal website of Pruthivi Thejan",
+  image,
+  data,
+  robots,
+} = Astro.props;
+---
+
+<html lang="en">
+  <Head {title} {description} {image} {data} {robots} />
+  <body class="max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-6xl mx-auto bg-neutral-900">
+    <Nav />
+    <main>
+      <slot>Default</slot>
+    </main>
+  </body>
+</html>

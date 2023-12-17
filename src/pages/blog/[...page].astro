@@ -3,8 +3,8 @@ import {getCollection, CollectionEntry } from "astro:content"
 
 import Main from "../../layout/main.astro";
 import PostCard from "../../components/PostCard.astro";
-import Pagination from "../../components/Pagination.astro";
 import Category from "../../components/Category.astro";
+import Pagination from "../../components/Pagination.astro";
 
 import { formatBlogPosts } from "../../lib/utils";
 
@@ -21,12 +21,12 @@ const { page } = Astro.props;
 ---
 
 <Main title="Pruthivi Thejan | Blog" >
-  <section class="mt-16 text-white" aria-label="New Blog Posts">
+  <section class="mt-16 px-4 text-white" aria-label="Blog Posts">
     <h1 class="font-heading text-6xl">Blog Posts</h1>
     <p class="mt-7 text-2xl font-body">In the near Future all the blogs going be written by AI. But this blog will be written by me. all the grammar mistakes and incorrect spellings aside, i’m going to improve my knowledge and writing skills. we can have a huge ‘quantity’ of posts with us using AI, we will always favour ‘quality’ in the long run.</p>
     <div class="grid gap-4 grid-cols-1 grid-rows-3 md:grid-cols-2 lg:grid-cols-3 mt-24">
       {
-        page.data.map((post) => (
+        page.data.map((post: { data: any; slug: any; }) => (
           <PostCard
             data={post.data}
             url={post.slug}

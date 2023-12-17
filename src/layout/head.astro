@@ -1,6 +1,5 @@
 ---
 import Seo from "../components/Seo.astro";
-import { ViewTransitions } from 'astro:transitions';
 const { title, description, image, data, robots } = Astro.props;
 ---
 
@@ -10,7 +9,6 @@ const { title, description, image, data, robots } = Astro.props;
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-  <ViewTransitions />
   <meta name="description" content={description} />
   <Seo {title} {description} url={Astro.url} {image} {data} {robots} />
   <!-- Google tag (gtag.js) -->

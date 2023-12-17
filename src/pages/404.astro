@@ -1,24 +1,20 @@
 ---
 import Link from "../components/Link.astro";
-import Main from "../layout/main.astro";
-
-import { Button } from "@/components/ui/button";
+import Empty from "../layout/empty.astro";
 ---
 
-<Main title="Error 404">
+<Empty title="Error 404">
   <div class="flex flex-col items-center justify-center h-screen text-white mx-auto font-body max-w-lg" >
-    <h1 class="text-6xl font-heading">404</h1>
-    <div>
+    <h1 class="text-6xl font-heading">Error 404</h1>
+    <div class="mb-3">
       <img
         src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
         alt="Error Image"
         class="m-4 w-[450px] rounded-xl"
       />
-      <h1 class=" text-center text-3xl font-bold ">Welp, this is awkward!</h1>
-      <p class=" text-center">It seems I have misplaced something…</p>
+      <h1 class=" text-center text-3xl font-bold ">Stay Calm and Go to Home</h1>
+      <p class=" text-center">This is either your fault or mine...</p>
     </div>
-    <Button asChild variant="link">
-      <a href="/">Go Home</a>
-    </Button>
+    <Link href="/" text="Go Home" classes="text-black font-bold rounded-md bg-neutral-50 py-2 px-3" />
   </div>
-</Main>
+</Empty>

@@ -32,11 +32,9 @@ import Link from "./Link.astro";
 <script>
   import "../lib/nav.js";
   const links = document.querySelectorAll('ul a');
-  import { navigate } from 'astro:transitions/client';
 
   links.forEach((link: HTMLAnchorElement) => {
     if (link.href === window.location.href) {
-      navigate(link.href);
       link.classList.add('bg-neutral-50', 'rounded-md', 'font-bold', 'py-3', 'px-5');
     }
   });
