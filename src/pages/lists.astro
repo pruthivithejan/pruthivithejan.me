@@ -1,8 +1,10 @@
 ---
 import MovieList from "@/components/MovieList"
 import Main from "@/layout/main.astro";
+import LinkPreview from "@/components/LinkPreview";
 ---
 
 <Main title+="Lists">
     <MovieList />
+    <LinkPreview dataIn={"https://podcasts.apple.com/lk/podcast/kickoff-sessions/id1541531544?i=1000612424662"} client:load />
 </Main>
