@@ -2,7 +2,9 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
+
 import react from "@astrojs/react";
+import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,5 +22,6 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
+    svelte(),
   ],
 });
