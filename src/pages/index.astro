@@ -1,36 +1,14 @@
 ---
 import "@/styles/global.css"
 import Main from "../layout/main.astro";
-import { Image } from 'astro:assets';
+
+import Hero from "@/components/Hero.svelte";
 
 ---
 
 <Main title="Pruthivi Thejan">
   <div class="h-screen text-white font-heading mt-16 text-center">
-    <div class="flex justify-center items-center mb-10">
-      <div class=" grayscale flex justify-center items-center w-64 h-64 p-2 ml-4 origin-center transform scale-100 bg-clip-content overflow-hidden rounded-lg shadow-sm shadow-neutral-50 ">
-        <Image
-          src={`https://avatars.githubusercontent.com/pruthivithejan`}
-          alt="Avatar"
-          class="rounded-md"
-          width=280
-          height=280
-        />
-      </div>
-    </div>
-     <h1 class="text-6xl">Pruthvi Thejan</h1>
-     <h1 class="text-6xl font-body">Designer & Developer</h1>
-     <div class="container py-10">
-      <h2 class="text-4xl">21</h2>
-      <h2 class="text-4xl">Sri Lankan </h2>
-      <h2 class="text-4xl">Undergratuate at USJP</h2>
-      <!-- <button class="animation-container">
-        <span class="spark__container">
-          <span class="spark" />
-        </span>
-        <span class="backdrop" />
-        <span class="text">Shooting star border</span>
-      </button> -->
-     </div>  
+     <Hero client:load/>
+
   </div>
 </Main>
