@@ -3,8 +3,9 @@
 /// <reference types="@astrojs/image/client" />
 
 interface ImportMetaEnv {
+  RESEND_AUDIENCE_ID: string;
+  RESEND_API_KEY: string;
   SITE: string | URL;
-  readonly PUBLIC_BREVO_API_KEY: string;
 }
 
 interface ImportMeta {

@@ -2,10 +2,11 @@ import { useState } from "react";
 
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+
+import { Resend } from "resend";
 
 function Newsletter() {
-  const externalId = "LK_" + Date.now();
-
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [formStatus, setFormStatus] = useState("");
@@ -16,31 +17,23 @@ function Newsletter() {
     setLoading(true);
     setFormStatus("");
 
-    fetch("https://api.brevo.com/v3/contacts", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Api-Key": import.meta.env.PUBLIC_BREVO_API_KEY,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+    const resend = new Resend(import.meta.env.RESEND_API_KEY);
+
+    resend.contacts
+      .create({
         email: email,
-        ext_id: externalId,
-        attributes: { FNAME: "", LNAME: "" },
-        emailBlacklisted: false,
-        smsBlacklisted: false,
-        listIds: [36],
-        updateEnabled: false,
-        smtpBlacklistSender: ["user@example.com"],
-      }),
-    })
-      .then((res) => res.json())
-      .then((response) => console.log(response))
-      .then((data) => {
+        firstName: "",
+        lastName: "",
+        unsubscribed: false,
+        audienceId: import.meta.env.RESEND_AUDIENCE_ID,
+      })
+      .then(() => {
         setLoading(false);
         setFormStatus("success");
       })
-      .catch(() => {
+      .catch((err) => {
+        const error = new Error(err.message);
+        console.log(error);
         setLoading(false);
         setFormStatus("error");
       });
@@ -77,13 +70,23 @@ function Newsletter() {
                 className="flex-none rounded-md bg-neutral-200 px-3.5 py-2.5 text-sm font-semibold text-neutral-900 shadow-sm hover:bg-neutral-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:neutral-indigo-500"
               >
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Subscribe &nbsp;
-                {formStatus === "success" && (
-                  <span className="text-green-500">Successful</span>
-                )}
-                {formStatus === "error" && (
-                  <span className="text-red-500">Fail</span>
-                )}
+                Subscribe
+                {formStatus === "success" &&
+                  toast("Event has been created", {
+                    description: "Sunday, December 03, 2023 at 9:00 AM",
+                    action: {
+                      label: "Undo",
+                      onClick: () => console.log("Undo"),
+                    },
+                  })}
+                {formStatus === "error" &&
+                  toast("Event has been created", {
+                    description: "Sunday, December 03, 2023 at 9:00 AM",
+                    action: {
+                      label: "Undo",
+                      onClick: () => console.log("Undo"),
+                    },
+                  })}
               </Button>
             </div>
           </div>
