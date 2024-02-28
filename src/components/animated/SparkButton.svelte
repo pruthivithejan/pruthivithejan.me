@@ -1,8 +1,17 @@
 <script>
   export let text = "";
+  // export let icon = "";
+  // export let size = "12";
+
+  // function getIcon(icon, size) {
+  //   return `<svg width="${size}" height="${size} fill="white"><use xlink:href="/icons/${icon}.svg#icon"></use></svg>`;
+  // }
 </script>
 
 <button class="animation-container">
+  <!-- {#if icon}
+    <span class="icon">{@html getIcon(icon, size)}</span>
+  {/if} -->
   <span class="spark__container">
     <span class="spark" />
   </span>
