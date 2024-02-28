@@ -45,7 +45,7 @@ function Newsletter() {
         <div className="max-w-2xl gap-x-8 gap-y-16 lg:max-w-none flex place-content-center mx-auto">
           <div className="max-w-xl lg:max-w-lg">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Subscribe to my newsletter.
+              Subscribe to my Newsletter.
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
               A Newsletter for Developers, Designers and Humans.

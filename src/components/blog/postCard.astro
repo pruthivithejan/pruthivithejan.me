@@ -11,7 +11,7 @@ const Tag = TagType;
 const { category, title, date, image, description } = data;
 ---
 
-<article class="flex flex-col rounded-lg font-body w-full bg-gradient-to-b from-neutral-50 via-neutral-500 to-neutral-800 p-px">
+<article class="group flex flex-col rounded-lg font-body w-full bg-gradient-to-b from-neutral-50 via-neutral-500 to-neutral-800 p-px">
   <div class="bg-neutral-900 h-full rounded-lg px-2.5 pb-14 relative">
     <a href=`/blog/${url}/` aria-hidden="true" tabindex="-1">
       <Image
@@ -25,7 +25,7 @@ const { category, title, date, image, description } = data;
         fit="cover"
         quality={100}
         aspectRatio="4:1"
-        class="rounded-lg"
+        class="rounded-lg pt-2.5"
       />
     </a>
     <div class="content">
@@ -48,8 +48,8 @@ const { category, title, date, image, description } = data;
         </div>
         <p class="text-base font-normal leading-5 line-clamp-2">{description}</p>
       </div>
-      <div class="absolute bottom-0 left-0 pl-2 pb-3">
-          <Link href={url} text="Read Post" classes="text-black font-bold rounded-md bg-neutral-50 py-2 px-3" />
+      <div class="group-hover:scale-105 absolute bottom-0 left-0 pl-2 pb-3">
+          <Link href={url} text="Read Post" classes="group-hover:text-lg text-black font-bold rounded-md bg-neutral-50 py-2 px-3" />
       </div>
     </div>
   </div>

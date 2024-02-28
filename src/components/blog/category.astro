@@ -1,6 +1,8 @@
 ---
 import {getCollection, CollectionEntry } from "astro:content"
-import { formatBlogPosts, slugify } from "../../lib/utils";
+import { formatBlogPosts, slugify } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge"
+
 import Link from "@/components/common/link.astro";
 
 const allPosts = await getCollection("blog");
@@ -26,8 +28,11 @@ const { showCount } = Astro.props;
     Object.entries(processedCategories).map(([key, val]) => (
       <li>
         <a href={`/blog/category/${slugify(key)}`} class="hover:underline">
+          <Badge variant="secondary">
           {key}
-          {showCount && `(${val})`}
+          
+          {showCount && <span>&nbsp;&#x2022;&nbsp;{val}</span>}
+         </Badge>
         </a>
       </li>
     ))

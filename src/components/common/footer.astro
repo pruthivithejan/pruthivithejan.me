@@ -3,11 +3,11 @@ import Link from "@/components/common/link.astro";
 import { Separator } from "@/components/ui/separator"
 import Newsletter from "@/components/Newsletter";
 
-const now = new Date();
-const year = now.getFullYear(); 
+ 
 ---
-<Separator className="bg-neutral-600" />
+
 <footer class="bg-neutral-900 font-body pb-24">
+   <Separator className="bg-neutral-600" />
     <div class="mx-auto text-center w-full max-w-screen-xl p-4 py-6 lg:py-8 mb-12">
       <Newsletter client:visible/>
     </div>
