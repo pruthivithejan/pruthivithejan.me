@@ -3,7 +3,6 @@ import {getCollection, CollectionEntry } from "astro:content"
 import { formatBlogPosts, slugify } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge"
 
-import Link from "@/components/common/link.astro";
 
 const allPosts = await getCollection("blog");
 const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts);

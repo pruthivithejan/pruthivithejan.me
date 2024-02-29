@@ -16,6 +16,7 @@
 
 - <a href="https://astro.build">Astro</a>
 - <a href="https://react.dev/">React</a>
+- <a href="https://svelte.dev/">Svelte</a>
 
 ### UI frameworks :
 
@@ -30,3 +31,7 @@
 ### Analytics
 
 - <a href="https://analytics.google.com/">Google Analytics</a>
+
+### Deployment
+
+- <a href="https://pages.cloudflare.com/">Cloudflare Pages</a>
