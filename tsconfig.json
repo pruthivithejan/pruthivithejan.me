@@ -13,6 +13,8 @@
   },
   "paths": {
     "@/*": ["./*"],
-    "@/components": ["./components/*"]
+    "@/components": ["./components/*"],
+    "$lib": ["./src/lib"],
+    "$lib/*": ["./src/lib/*"]
   }
 }
