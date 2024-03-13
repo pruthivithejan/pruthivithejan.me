@@ -3,7 +3,7 @@
   import { Button } from "@/components/ui/button/index";
   import { toast } from "svelte-sonner";
 
-  import Resend from "resend";
+  import { Resend } from "resend";
 
   let email = "";
   let loading = false;
@@ -45,9 +45,8 @@
           Subscribe to my Newsletter.
         </h2>
         <p class="mt-4 text-lg leading-8 text-gray-300">
-          A Newsletter for Developers, Designers and Humans.
+          A Newsletter for Designers, Developers and Humans.
         </p>
-
         <div class="mt-6 flex max-w-md gap-x-4">
           <label for="email-address" class="sr-only"> Email address </label>
           <input

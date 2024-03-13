@@ -1,4 +1,7 @@
 import { z, defineCollection } from "astro:content";
+import categories from "@/data/categories.json";
+
+const categoryEnum = categories.map((category) => category.name);
 
 const blog = defineCollection({
   schema: z.object({
@@ -15,7 +18,7 @@ const blog = defineCollection({
         "For best SEO results, please keep the description under 160 characters."
       ),
     draft: z.boolean().default(false),
-    category: z.enum(["CSS", "Reference Docs", "Astro", "General"]),
+    category: z.enum(categoryEnum),
   }),
 });
 

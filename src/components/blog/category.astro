@@ -1,5 +1,5 @@
 ---
-import {getCollection, CollectionEntry } from "astro:content"
+import {getCollection, type CollectionEntry } from "astro:content"
 import { formatBlogPosts, slugify } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge"
 
@@ -9,6 +9,7 @@ const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts);
 const allCategories = formattedBlogPosts
   .map((ctgr) => ctgr.data.category.toLowerCase())
   .flat();
+
 
 const processedCategories = allCategories.reduce((acc, category) => {
   const value = acc[category] || 0;

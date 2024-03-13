@@ -1,11 +1,11 @@
 ---
-import {getCollection, CollectionEntry } from "astro:content"
-import Main from "../../layout/main.astro";
+import {getCollection, type CollectionEntry } from "astro:content"
+import Main from "@/layout/main.astro";
 import Posts from "@/components/blog/posts.astro";
 import Category from "@/components/blog/category.astro";
 import Related from "@/components/blog/related.astro";
 
-import { formatBlogPosts } from "../../lib/utils";
+import { formatBlogPosts } from "@/lib/utils";
 
 
 export async function getStaticPaths() {
@@ -53,7 +53,8 @@ const relatedPosts = formattedPosts
   />
   <div>
     <div class="text-white font-body leading-relaxed tracking-wide my-6 grid gap-3">
-      <Content />
+      {Content ? <Content /> : <Fragment set:html={post.body || ''} />}
+      
     </div>
     <div class="py-6">
       <aside class="text-white font-body flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">

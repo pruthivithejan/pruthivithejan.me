@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Programming Languages",
+    "slug": "programming-languages"
+  },
+  {
+    "name": "C",
+    "slug": "c"
+  },
+  {
+    "name": "General",
+    "slug": "general"
+  },
+  {
+    "name": "CSS",
+    "slug": "css"
+  },
+  {
+    "name": "Astro",
+    "slug": "astro"
+  }
+]
