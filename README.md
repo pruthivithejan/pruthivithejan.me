@@ -15,13 +15,11 @@
 ### JavaScript frameworks:
 
 - <a href="https://astro.build">Astro</a>
-- <a href="https://react.dev/">React</a>
 - <a href="https://svelte.dev/">Svelte</a>
 
 ### UI frameworks :
 
-- <a href="https://www.radix-ui.com/">Radix UI</a>
-- <a href="https://ui.shadcn.com/">Shadcn UI</a>
+- <a href="https://shadcn-svelte.com/">shadcn-svelte</a>
 - <a href="https://tailwindcss.com/">Tailwind CSS</a>
 
 ### Performance
