@@ -3,39 +3,58 @@
   import { Button } from "@/components/ui/button/index";
   import { toast } from "svelte-sonner";
 
-  import { Resend } from "resend";
-
   let email = "";
   let loading = false;
   let formStatus = "";
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
     loading = true;
     formStatus = "";
 
-    const resend = new Resend(import.meta.env.RESEND_API_KEY);
-
     try {
-      await resend.contacts.create({
-        email: email,
-        firstName: "",
-        lastName: "",
-        unsubscribed: false,
-        audienceId: import.meta.env.RESEND_AUDIENCE_ID,
+      const response = await fetch("/api/sendEmail.json", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+        }),
       });
-      loading = false;
-      formStatus = "success";
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.message === "Subscription successful") {
+          formStatus = "success";
+          toast("Subscription successful", {
+            description: "You have been subscribed to the newsletter.",
+          });
+        } else {
+          formStatus = "error";
+          toast("Subscription failed", {
+            description:
+              "There was an error subscribing you to the newsletter.",
+          });
+        }
+      } else {
+        formStatus = "error";
+        toast("Subscription failed", {
+          description: "There was an error subscribing you to the newsletter.",
+        });
+      }
     } catch (err) {
       console.error(err);
-      loading = false;
       formStatus = "error";
+      toast("Subscription failed", {
+        description: "There was an error subscribing you to the newsletter.",
+      });
+    } finally {
+      loading = false;
     }
   };
 </script>
 
-<form on:submit={handleSubmit}>
+<form on:submit|preventDefault={handleSubmit}>
   <div class="overflow-hidden py-16 sm:py-24 lg:py-32">
     <div
       class="max-w-2xl gap-x-8 gap-y-16 lg:max-w-none flex place-content-center mx-auto"
@@ -66,24 +85,6 @@
               <Reload class="mr-2 h-4 w-4 animate-spin" />
             {/if}
             Subscribe
-            {#if formStatus === "success"}
-              {toast("Event has been created", {
-                description: "Sunday, December 03, 2023 at 9:00 AM",
-                action: {
-                  label: "Undo",
-                  onClick: () => console.log("Undo"),
-                },
-              })}
-            {/if}
-            {#if formStatus === "error"}
-              {toast("Event has been created", {
-                description: "Sunday, December 03, 2023 at 9:00 AM",
-                action: {
-                  label: "Undo",
-                  onClick: () => console.log("Undo"),
-                },
-              })}
-            {/if}
           </Button>
         </div>
       </div>

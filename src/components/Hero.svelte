@@ -16,20 +16,8 @@
       height="280"
     />
   </div>
-
-  <!-- <div class="center">
-    <div class="thirteen">
-      <img
-        src={`https://avatars.githubusercontent.com/pruthivithejan`}
-        alt="Avatar"
-        class="rounded-md"
-        width="280"
-        height="280"
-      />
-    </div>
-  </div> -->
 </div>
-<h1 class="text-6xl">Pruthvi Thejan</h1>
+<h1 class="text-6xl">Pruthivi Thejan</h1>
 <h1 class="text-6xl font-body"><RollingText {words} /></h1>
 <div class="container py-10">
   <h2 class="text-4xl">21</h2>
