@@ -21,7 +21,6 @@
           email: email,
         }),
       });
-
       if (response.ok) {
         const data = await response.json();
         if (data.message === "Subscription successful") {

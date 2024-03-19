@@ -131,14 +131,14 @@ declare module 'astro:content' {
   slug: "why-im-still-getting-to-learn-c";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "template.md": {
 	id: "template.md";
   slug: "template";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -146,11 +146,16 @@ declare module 'astro:content' {
 
 	type DataEntryMap = {
 		"work": {
+"pruthivithejan": {
+	id: "pruthivithejan";
+  collection: "work";
+  data: any
+};
 };
 
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../src/content/config.js");
+	export type ContentConfig = never;
 }

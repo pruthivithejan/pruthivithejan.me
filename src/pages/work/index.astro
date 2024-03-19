@@ -1,7 +1,7 @@
 ---
 import SparkButton from "@/components/animated/SparkButton.svelte";
 import Main from "@/layout/main.astro";
-
+import Work from "@/components/Work.svelte";
 
 ---
 
@@ -11,6 +11,8 @@ import Main from "@/layout/main.astro";
       <a href="https://gitlab.com/users/pruthivithejan/projects" target="_blank">
       <SparkButton text="All my learning projects are on my GitLab"/>
     </a>
+    <div>
+    <Work client:load />
     </div>
   </div>
 </Main>
