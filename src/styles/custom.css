@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Fonts */
+@layer base {
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 100;
+    src: url(/fonts/Nohemi-Thin.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 200;
+    src: url(/fonts/Nohemi-Thin.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 300;
+    src: url(/fonts/Nohemi-Light.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 400;
+    src: url(/fonts/Nohemi-Regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 500;
+    src: url(/fonts/Nohemi-Medium.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 600;
+    src: url(/fonts/Nohemi-SemiBold.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 700;
+    src: url(/fonts/Nohemi-Bold.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 800;
+    src: url(/fonts/Nohemi-ExtraBold.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Nohemi;
+    font-weight: 900;
+    src: url(/fonts/Nohemi-Black.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Staatliches;
+    font-weight: 400;
+    src: url(/fonts/Staatliches-Regular.woff2) format("woff2");
+  }
+}
+
+/* Custom Scroll Bar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a3a3a3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e5e5e5;
+}
+
+/* Custom Enter Animation */
+.animate-enter {
+  opacity: 0;
+  animation: enter 500ms forwards;
+  animation-delay: calc(var(--stagger) * 200ms);
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

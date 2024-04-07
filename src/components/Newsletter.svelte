@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  import { onMount } from "svelte";
   import Reload from "svelte-radix/Reload.svelte";
   import { Button } from "@/components/ui/button/index";
   import { toast } from "svelte-sonner";
@@ -8,10 +9,12 @@
   let formStatus = "";
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     loading = true;
     formStatus = "";
 
     try {
+      console.log(email);
       const response = await fetch("/api/sendEmail.json", {
         method: "POST",
         headers: {
@@ -21,6 +24,7 @@
           email: email,
         }),
       });
+
       if (response.ok) {
         const data = await response.json();
         if (data.message === "Subscription successful") {
@@ -51,9 +55,27 @@
       loading = false;
     }
   };
+
+  // Log any errors during component initialization
+  onMount(() => {
+    window.onerror = function (msg, url, lineNo, columnNo, error) {
+      console.error(
+        "Error occurred:",
+        msg,
+        "URL:",
+        url,
+        "Line:",
+        lineNo,
+        "Column:",
+        columnNo,
+        "Error object:",
+        error
+      );
+    };
+  });
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
+<form on:submit={handleSubmit}>
   <div class="overflow-hidden py-16 sm:py-24 lg:py-32">
     <div
       class="max-w-2xl gap-x-8 gap-y-16 lg:max-w-none flex place-content-center mx-auto"

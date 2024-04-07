@@ -15,7 +15,7 @@
 <div class="grid gap-6 my-6">
   {#if works.length > 0}
     {#each works as work (work.id)}
-      <Card.Root class="w-[350px] dark">
+      <Card.Root class="w-[350px] dark animate-enter">
         <Card.Header>
           <Card.Title>{work.data.work_name}</Card.Title>
           <Card.Description>{work.data.work_description}</Card.Description>
