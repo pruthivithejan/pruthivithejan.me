@@ -23,7 +23,9 @@ const { page } = Astro.props;
 <Main title="Pruthivi Thejan | Blog" >
   <section class="mt-16 px-4 text-white" aria-label="Blog Posts">
     <h1 class="font-heading text-6xl animate-enter">Blog Posts</h1>
-    <p class="mt-7 text-xl font-body animate-enter" style="--stagger: 1">In a world where automation is on the rise, I've chosen to keep this blog personal and authentic. Here, every week, I delve into topics ranging from new tech trends to software design and development, software architecture, and personal productivity. Beyond just correcting grammar mistakes and misspellings, I aim to enhance my knowledge and refine my writing skills. While AI may offer quantity, I'm dedicated to delivering quality content that stands the test of time.</p>
+    <p
+    class="max-w-[750px] text-lg text-muted-foreground sm:text-xl text-left"
+  >In a world where automation is on the rise, I've chosen to keep this blog personal and authentic. Here, every week, I delve into topics ranging from new tech trends to software design and development, software architecture, and personal productivity. Beyond just correcting grammar mistakes and misspellings, I aim to enhance my knowledge and refine my writing skills. While AI may offer quantity, I'm dedicated to delivering quality content that stands the test of time.</p>
     <div class="grid gap-4 grid-cols-1 grid-rows-3 md:grid-cols-2 lg:grid-cols-3 mt-24">
       {
         page.data.map((post: { data: any; slug: any; }) => (
@@ -37,7 +39,7 @@ const { page } = Astro.props;
     </div>
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
-  <aside class="text-white font-body flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">
+  <aside class="text-white flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">
     <a href="/blog/category/">
       <h2 class="text-md font-semibold uppercase ">Blog Categories</h2>
     </a>

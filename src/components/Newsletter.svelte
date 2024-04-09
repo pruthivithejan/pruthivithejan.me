@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import Reload from "svelte-radix/Reload.svelte";
   import { Button } from "@/components/ui/button/index";
   import { toast } from "svelte-sonner";
@@ -55,24 +54,6 @@
       loading = false;
     }
   };
-
-  // Log any errors during component initialization
-  onMount(() => {
-    window.onerror = function (msg, url, lineNo, columnNo, error) {
-      console.error(
-        "Error occurred:",
-        msg,
-        "URL:",
-        url,
-        "Line:",
-        lineNo,
-        "Column:",
-        columnNo,
-        "Error object:",
-        error
-      );
-    };
-  });
 </script>
 
 <form on:submit={handleSubmit}>

@@ -33,10 +33,10 @@
         <Card.Footer class="flex justify-between">
           {#if work.data.details.repo}
             <Button variant="outline">
-              <a href={work.data.details.repo}>Repo</a>
+              <a href={work.data.details.repo}>Repository</a>
             </Button>
           {/if}
-          <Button><a href={work.data.details.url}>Demo </a></Button>
+          <Button><a href={work.data.details.url}>View Demo </a></Button>
         </Card.Footer>
       </Card.Root>
     {/each}

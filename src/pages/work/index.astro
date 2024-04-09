@@ -2,17 +2,35 @@
 import SparkButton from "@/components/animated/SparkButton.svelte";
 import Main from "@/layout/main.astro";
 import Work from "@/components/Work.svelte";
-
 ---
 
 <Main title="Pruthivi Thejan | Work">
-  <div class="flex justify-center items-center mb-10">
-    <div class="h-screen font-body mt-16 text-center">
-      <a href="https://gitlab.com/users/pruthivithejan/projects" target="_blank">
-      <SparkButton text="All my learning projects are on my GitLab"/>
-    </a>
-    <div>
+  <div class="container relative pb-10">
+  <section
+    class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20"
+  >
+  <a href="https://gitlab.com/users/pruthivithejan/projects" target="_blank">
+    <SparkButton text="All my learning projects are on my GitLab"/>
+  </a>
+
+    <h1
+      class="text-center font-heading text-neutral-50 text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] hidden md:block"
+    >
+      Recent projects I've worked on
+    </h1>
+    <h1
+      class="text-center font-heading text-neutral-50 text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] md:hidden"
+    >
+      Work
+    </h1>
+    <p
+      class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl text-balance"
+    >
+    I'm thrilled to showcase some of my recent projects that demonstrate my passion for crafting intuitive user experiences and robust, efficient software solutions.
+    </p>
+  </section>
+  <section class="h-screen">
     <Work client:load />
-    </div>
-  </div>
+  </section>
+</div>
 </Main>
