@@ -11,7 +11,7 @@ const { title, description, image, data, robots } = Astro.props;
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <!-- <ViewTransitions /> -->
+  <ViewTransitions />
   <seo {title} {description} url={Astro.url} {image} {data} {robots} />
   <!-- Google tag (gtag.js) -->
   <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-M3H2QEVCXY"></script>
