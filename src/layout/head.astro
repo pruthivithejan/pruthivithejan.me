@@ -11,6 +11,8 @@ const { title, description, image, data, robots } = Astro.props;
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <!-- Pinterest Verification Tag -->
+  <meta name="p:domain_verify" content="e93fa39fecd18ec8c449ab6bc4df3c03"/>
   <ViewTransitions />
   <seo {title} {description} url={Astro.url} {image} {data} {robots} />
   <!-- Google tag (gtag.js) -->
