@@ -1,6 +1,7 @@
 <script lang="ts">
   import Reload from "svelte-radix/Reload.svelte";
   import { Button } from "@/components/ui/button/index";
+  import { Input } from "@/components/ui/input/index";
   import { toast } from "svelte-sonner";
 
   let email = "";
@@ -56,40 +57,43 @@
   };
 </script>
 
-<form on:submit={handleSubmit}>
-  <div class="overflow-hidden py-16 sm:py-24 lg:py-32">
-    <div
-      class="max-w-2xl gap-x-8 gap-y-16 lg:max-w-none flex place-content-center mx-auto"
-    >
-      <div class="max-w-xl lg:max-w-lg">
-        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Subscribe to my Newsletter.
-        </h2>
-        <p class="mt-4 text-lg leading-8 text-gray-300">
-          A Newsletter for Designers, Developers and Humans.
-        </p>
-        <div class="mt-6 flex max-w-md gap-x-4">
-          <label for="email-address" class="sr-only"> Email address </label>
-          <input
-            name="email"
-            type="email"
-            autocomplete="email"
-            required
-            class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-neutral-500 sm:text-sm sm:leading-6"
-            placeholder="Enter your email"
-            bind:value={email}
-          />
-          <Button
-            type="submit"
-            class="flex-none rounded-md bg-neutral-200 px-3.5 py-2.5 text-sm font-semibold text-neutral-900 shadow-sm hover:bg-neutral-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:neutral-indigo-500"
-          >
+<div
+  class="glass-container mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]"
+>
+  <div class="bg-neutral-950 p-5 rounded-lg">
+    <div class="flex flex-col space-y-2 text-center">
+      <h1 class="text-2xl font-semibold tracking-tight text-neutral-50">
+        Subscribe to Newsletter
+      </h1>
+      <p class="text-sm text-muted-foreground">
+        A Newsletter for Designers, Developers and Humans
+      </p>
+    </div>
+    <div class="grid gap-6">
+      <form on:submit|preventDefault={handleSubmit}>
+        <div class="grid gap-2">
+          <div class="grid gap-1">
+            <label class="sr-only" for="email">Email</label>
+            <Input
+              id="email"
+              placeholder="name@example.com"
+              type="email"
+              autocapitalize="none"
+              autocomplete="email"
+              autocorrect="off"
+              disabled={loading}
+              bind:value={email}
+              required
+            />
+          </div>
+          <Button type="submit" disabled={loading}>
             {#if loading}
               <Reload class="mr-2 h-4 w-4 animate-spin" />
             {/if}
             Subscribe
           </Button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
-</form>
+</div>

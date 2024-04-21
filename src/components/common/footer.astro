@@ -2,16 +2,44 @@
 import Link from "@/components/common/link.astro";
 import { Separator } from "@/components/ui/separator"
 import Newsletter from "@/components/Newsletter.svelte";
-
+import { Button } from "@/components/ui/button/index";
  
 ---
 
-<footer class="bg-neutral-950 font-body pb-24">
-   <Separator class="bg-neutral-600" />
-    <div class="mx-auto text-center w-full max-w-screen-xl p-4 py-6 lg:py-8 mb-12">
+<footer class="py-6 pb-24 ">
+  <Separator class="bg-neutral-600" />
+  <div class="gap-4 flex items-center justify-center py-10">
       <Newsletter client:visible/>
+      <!-- <div class="container">
+        <div class="absolute inset-0 flex items-center">
+          <span class="w-full border-t" />
+        </div>
+        <div class="relative flex justify-center text-xs uppercase">
+          <span class="bg-background px-2 text-muted-foreground">
+            Or continue with
+          </span>
+        </div>
+      </div>
+      <Button variant="outline" type="button">
+        GitHub
+      </Button>
     </div>
-    <div class="flex justify-center gap-2">
+    <p class="px-8 text-center text-sm text-muted-foreground">
+      By clicking continue, you agree to our
+      <a href="/terms" class="underline underline-offset-4 hover:text-primary">
+        Terms of Service
+      </a>
+      and
+      <a
+        href="/privacy"
+        class="underline underline-offset-4 hover:text-primary"
+      >
+        Privacy Policy
+      </a>
+      .
+    </p> -->
+  </div>
+     <div class="flex justify-center gap-2">
       <Link target="_blank" href="https://github.com/pruthivithejan" classes="text-neutral-950 rounded-lg bg-neutral-100 border-4 border-neutral-500 p-3" icon={{
         name: "social/github",
         side: "right",
@@ -42,6 +70,7 @@ import Newsletter from "@/components/Newsletter.svelte";
         height:"32", 
         width:"32"
       }} />
+    </div>
     </div>
   </footer>
   

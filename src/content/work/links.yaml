@@ -1,0 +1,13 @@
+work_id: 2
+work_name: links
+work_description: Linktree for developers
+img: /images/work/links.png
+status: finished
+details:
+  url: https://links.pruthivithejan.me
+  repo: https://github.com/pruthivithejan/links
+  tech_stack:
+    - name: React
+      icon: https://example.com/icons/vuejs.png
+    - name: Vite
+      icon: https://example.com/icons/django.png

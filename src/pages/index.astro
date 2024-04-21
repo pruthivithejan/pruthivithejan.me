@@ -1,16 +1,93 @@
 ---
+//utility imports
+import { getCollection, type CollectionEntry } from "astro:content";
 import "@/styles/global.css"
-import Main from "../layout/main.astro";
+import { formatBlogPosts } from "@/lib/utils";
 
+//component imports
+import Main from "@/layout/main.astro";
 import Hero from "@/components/Hero.svelte";
+import StackMarquee from "@/components/StackMarquee.svelte"
+import PostCard from "@/components/blog/postCard.astro";
+
+import * as Carousel from "@/components/ui/carousel/index.js";
+import { Separator } from "@/components/ui/separator";
+
+const allPosts = await getCollection("blog");
+const formattedPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts, {
+  limit: 3,
+});
 
 ---
 
 <Main title="Pruthivi Thejan">
   <div class="h-screen text-white font-heading mt-16 text-center">
+  <section>
     <div class="h-50 bg-dot-neutral-50/[0.2]">
-    <div class="absolute pointer-events-none inset-0 flex items-center justify-center bg-neutral-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/>
+    <!-- <div class="absolute pointer-events-none inset-0 flex items-center justify-center bg-neutral-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/> -->
     <Hero client:load/>
+  </section>
+  <!-- <Separator class="bg-neutral-600" />
+  <section>
+    <h2 class="text-2xl">New Blog Posts</h2>
+    <div class="container">
+      {
+        formattedPosts.map((post) => (
+          <PostCard data={post.data} url={post.slug} tagType="h3" />
+        ))
+      }
+    </div>
+  </section> -->
+  <!-- <section class="items-center flex justify-center">
+    <div
+  class="mt-16 grid max-w-4xl grid-rows-[auto_auto_auto] gap-8 md:grid-cols-3 md:gap-10 mx-auto"
+>
+  <div
+    class="glass-container row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gray-950/60 p-4 before:bg-gray-100/10 md:col-span-2"
+  >
+    <h3 class="text-2xl">
+      <h1>Title</h1>
+    </h3>
+    <div class="max-w-md text-balance text-gray-300">
+      <p></p>
+    </div>
+    <slot />
   </div>
+  <div
+    class="glass-container row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gray-950/60 p-4 before:bg-gray-100/10 md:col-span-1"
+  >
+    <h3 class="text-2xl">
+      <h1>Title</h1>
+    </h3>
+    <div class="max-w-md text-balance text-gray-300">
+      <p></p>
+    </div>
+    <slot />
+  </div>
+
+  <div
+    class="glass-container row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gray-950/60 p-4 before:bg-gray-100/10 md:col-span-1"
+  >
+    <h3 class="text-2xl">
+      <h1>Title</h1>
+    </h3>
+    <div class="max-w-md text-balance text-gray-300">
+      <p></p>
+    </div>
+    <slot />
+  </div>
+  <div
+    class="glass-container row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gray-950/60 p-4 before:bg-gray-100/10 md:col-span-2"
+  >
+    <h3 class="text-2xl">
+      <h1>Title</h1>
+    </h3>
+    <div class="max-w-md text-balance text-gray-300">
+      <p></p>
+    </div>
+    <StackMarquee />
+  </div>
+</div>
+  </section> -->
   </div>
 </Main>

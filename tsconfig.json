@@ -3,18 +3,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/components": ["./components/*"]
     },
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  },
-  "paths": {
-    "@/*": ["./*"],
-    "@/components": ["./components/*"],
-    "$lib": ["./src/lib"],
-    "$lib/*": ["./src/lib/*"]
   }
 }

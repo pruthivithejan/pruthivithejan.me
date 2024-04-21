@@ -2,56 +2,59 @@
 import { Image } from 'astro:assets';
 
 import { slugify, formatDate } from "@/lib/utils";
-import Link from "@/components/common/link.astro";
+
+import * as Card from "@/components/ui/card/index";
+import { Button } from "@/components/ui/button/index";
+import { Badge } from "@/components/ui/badge/index";
 
 const { data, url, TagType } = Astro.props;
 
-const Tag = TagType;
 
 const { category, title, date, image, description } = data;
 ---
 
-<article class="group flex flex-col rounded-lg font-body w-full bg-gradient-to-b from-neutral-50 via-neutral-500 to-neutral-800 p-px animate-enter" style="--stagger: 2">
-  <div class="bg-neutral-900 h-full rounded-lg px-2.5 pb-14 relative">
-    <a href=`/blog/${url}/` aria-hidden="true" tabindex="-1">
+<div class="glass-container w-[350px] animate-enter" style="--stagger: 2">
+  <Card.Root class="w-[350px] dark  ">
+    <Card.Header>
+      <Card.Title><a href={url}>{title}</a></Card.Title>
+     
+      <div class="mb-2 mt-2">
+        <small>
+          <a href={`/blog/category/${slugify(category)}/`} >
+            <Badge variant='outline'> #{category}</Badge>
+          </a>
+        </small>
+          &nbsp;
+          &#8226; 
+          &nbsp;
+        <small>
+          {formatDate(date)}
+        </small>
+      </div>
+    </Card.Header>
+    <Card.Content>
       <Image
-        src={image.src}
-        alt={image.alt}
-        width="400"
-        height="250"
-        decoding="async"
-        loading="lazy"
-        format="webp"
-        fit="cover"
-        quality={100}
-        aspectRatio="4:1"
-        class="rounded-lg pt-2.5"
-      />
-    </a>
-    <div class="content">
-      <div>
-        <Tag class="text-3xl font-medium max-w-prose pt-2.5">
-          <a href={url}>{title}</a>
-        </Tag>
-        <div class="mb-2 mt-2">
-          <small>
-            <a href={`/blog/category/${slugify(category)}/`} class="border-t-[2px] border-x-[1px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md font-medium py-1.5 px-3">
-              #{category}
-            </a>
-          </small>
-            &nbsp;
-            &#8226; 
-            &nbsp;
-          <small>
-            {formatDate(date)}
-          </small>
-        </div>
-        <p class="text-base font-normal leading-5 line-clamp-2">{description}</p>
-      </div>
-      <div class="group-hover:scale-105 absolute bottom-0 left-0 pl-2 pb-3">
-          <Link href={url} text="Read Post" classes="group-hover:text-lg text-black font-bold rounded-md bg-neutral-50 py-2 px-3" />
-      </div>
-    </div>
-  </div>
-</article>
+      src={image.src}
+      alt={image.alt}
+      width="400"
+      height="250"
+      decoding="async"
+      loading="lazy"
+      format="webp"
+      fit="cover"
+      quality={100}
+      aspectRatio="4:1"
+      class="rounded-lg pt-2.5"
+    />
+    <Card.Description>{description}</Card.Description>
+    </Card.Content>
+    <Card.Footer class="flex justify-between">
+      <Button
+              ><a href={url} 
+                >Read Post
+              </a></Button
+            >
+    </Card.Footer>
+  </Card.Root>
+</div>
 
