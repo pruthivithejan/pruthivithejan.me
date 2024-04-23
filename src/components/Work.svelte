@@ -2,32 +2,48 @@
   import * as Card from "@/components/ui/card/index";
   import { Button } from "@/components/ui/button/index";
   import { Badge } from "@/components/ui/badge/index";
+  import { Skeleton } from "@/components/ui/skeleton";
   import { onMount } from "svelte";
   let works = [];
 
   onMount(async () => {
     const res = await fetch("/api/getWork.json");
     const data = await res.json();
-    works = data;
+    works = data.map((work) => ({ ...work, loading: true }));
+    setTimeout(() => {
+      works = works.map((work) => ({ ...work, loading: false }));
+    }, 2000);
   });
 </script>
 
 <div
-  class="grid gap-16 grid-cols-1 grid-rows-3 md:grid-cols-2 lg:grid-cols-3 mt-24"
+  class="flex flex-col gap-8 items-center md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-12"
 >
   {#if works.length > 0}
     {#each works as work (work.id)}
-      <div class="glass-container w-[350px] animate-enter" style="--stagger: 2">
-        <Card.Root class="w-[350px] dark  ">
+      <div
+        class="glass-container w-[350px] animate-enter items-center"
+        style="--stagger: 2"
+      >
+        <Card.Root class="w-[350px] dark h-full">
           <Card.Header>
             <Card.Title>{work.data.work_name}</Card.Title>
             <Card.Description>{work.data.work_description}</Card.Description>
           </Card.Header>
           <Card.Content>
             <Badge variant={work.data.status}>{work.data.status}</Badge>
-            <img src={work.data.img} alt={work.data.work_name} />
+            {#if work.loading}
+              <Skeleton class="h-[200px] w-[300px]" />
+            {:else}
+              <img
+                src={work.data.img}
+                alt={work.data.work_name}
+                height="200"
+                width="300"
+              />
+            {/if}
             <h1 class="space-x-2">
-              Tech Stack: <br />
+              Technogly Stack: <br />
               {#each work.data.details.tech_stack as tech}
                 <Badge>{tech.name}</Badge>
               {/each}

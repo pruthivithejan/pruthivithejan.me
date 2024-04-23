@@ -36,11 +36,11 @@ const relatedPosts = formattedBlogPosts
     robots={data.robots}
   />
   <div class="py-6">
-    <div class="text-white font-body">
+    <div class="text-neutral-50 font-body">
       <slot />
     </div>
     <div class="py-6">
-      <aside class="text-white flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">
+      <aside class="text-neutral-50 flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">
         <a href="/blog/category/">
           <h2 class="text-md font-semibold uppercase">Blog Categories</h2>
         </a>
@@ -48,7 +48,7 @@ const relatedPosts = formattedBlogPosts
       </aside>
       {
         relatedPosts.length > 0 && (
-          <aside class="text-white font-body flex justify-center gap-2 flex-row p-4" aria-label="Related categories">
+          <aside class="text-neutral-50 font-body flex justify-center gap-2 flex-row p-4" aria-label="Related categories">
             <h2 class="text-md font-semibold uppercase">Related Posts</h2>
             <Related {relatedPosts} />
           </aside>

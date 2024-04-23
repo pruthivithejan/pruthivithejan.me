@@ -6,6 +6,7 @@ import PostCard from "@/components/blog/postCard.astro";
 import Category from "@/components/blog/category.astro";
 import Pagination from "@/components/blog/pagination.astro";
 import SparkButton from "@/components/animated/SparkButton.svelte";
+import { Separator } from "@/components/ui/separator/index";
 
 import { formatBlogPosts } from "../../lib/utils";
 
@@ -21,13 +22,13 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<Main title="Pruthivi Thejan | Blog" >
+<Main title="Blog | Pruthivi Thejan " >
   <section class="px-4 text-neutral-50" aria-label="Blog Posts">
     <div
     class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20"
   >
-  <a href="https://gitlab.com/users/pruthivithejan/projects" target="_blank" class="animate-enter" style="--stagger: 1" >
-    <SparkButton text="All my learning projects are on my GitLab"/>
+  <a href={page.data[0].slug} class="animate-enter" style="--stagger: 1" >
+    <SparkButton text="Read Latest Post"/>
   </a>
     <h1
       class="text-center font-heading text-neutral-50 text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] hidden md:block animate-enter"
@@ -45,22 +46,23 @@ const { page } = Astro.props;
     > Weekly topics cover tech trends, software, and productivity. Beyond grammar fixes, the aim is knowledge expansion and writing refinement. Quality over quantity is prioritized.
     </p>
   </div>
- 
+    <div class="flex flex-col gap-8 items-center md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-12">
       {
         page.data.map((post: { data: any; slug: any; }) => (
           <PostCard
+          
             data={post.data}
             url={post.slug}
             TagType="h2"
           />
         ))
       }
-      
+      </div>
     </div>
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-  
+  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
-  <section class="text-white flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">
+  <section class="text-neutral-50 flex items-center gap-2 flex-col p-4 pt-12" aria-label="Blog categories">
+    <Separator class="w-[250px] bg-neutral-600" />
     <a href="/blog/category/">
       <h2 class="text-md font-semibold uppercase ">Blog Categories</h2>
     </a>

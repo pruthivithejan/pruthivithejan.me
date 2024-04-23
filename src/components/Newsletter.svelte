@@ -58,7 +58,7 @@
 </script>
 
 <div
-  class="glass-container mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]"
+  class="glass-container mx-auto flex flex-col justify-center space-y-6 w-[300px] md:w-[350px]"
 >
   <div class="bg-neutral-950 p-5 rounded-lg">
     <div class="flex flex-col space-y-2 text-center">
@@ -69,7 +69,7 @@
         A Newsletter for Designers, Developers and Humans
       </p>
     </div>
-    <div class="grid gap-6">
+    <div class="grid gap-6 pt-4">
       <form on:submit|preventDefault={handleSubmit}>
         <div class="grid gap-2">
           <div class="grid gap-1">
@@ -86,7 +86,7 @@
               required
             />
           </div>
-          <Button type="submit" disabled={loading}>
+          <Button type="submit" class="dark" disabled={loading}>
             {#if loading}
               <Reload class="mr-2 h-4 w-4 animate-spin" />
             {/if}

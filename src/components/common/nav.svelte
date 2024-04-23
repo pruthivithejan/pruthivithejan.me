@@ -9,7 +9,7 @@
     links.forEach((link) => {
       if (link.href === window.location.href) {
         link.classList.add(
-          "bg-neutral-50",
+          "bg-neutral-100",
           "rounded-md",
           "font-bold",
           "py-3",
@@ -21,13 +21,14 @@
 </script>
 
 <div class="flex justify-center">
-  <nav class="fixed bottom-4 z-50 text-black">
+  <h2 class="sr-only">Navigation Bar</h2>
+  <nav class="fixed bottom-4 z-50 text-neutral-950">
     <ul
-      class="flex flex-row gap-2.5 items-center font-body font-medium text-base sm:text-lg md:text-xl lg:text-2xl rounded-lg backdrop-blur-2xl bg-neutral-400/75"
+      class="flex flex-row items-center font-medium backdrop-blur-2xl bg-neutral-400/75 rounded-lg gap-2 text-base sm:text-lg md:text-xl lg:text-2xl"
     >
       {#each navData as item (item.path)}
         <li class="px-1 py-3">
-          <a href={item.path} class="link px-5" target="_self">
+          <a href={item.path} class="link px-3" target="_self">
             {item.name}
           </a>
         </li>
