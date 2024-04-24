@@ -46,7 +46,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        body: ["Nohemi"],
+        body: ["Geist"],
         heading: ["Staatliches"],
       },
       colors: {

@@ -9,15 +9,6 @@ category: Programming Languages
 
 # Why C Still Matters in 2024: A Programmer's Perspective
 
-```c
-#include <stdio.h>
-
-int main() {
-  printf("Hello World!");
-  return 0;
-}
-```
-
 C, one of the granddaddies of programming languages, might seem like a relic compared to the shiny, feature-rich languages of today. But don't be fooled by its age. C remains a relevant and powerful tool for programmers in 2024, and here's why:
 
 ## Direct Hardware Access and Unmatched Performance:

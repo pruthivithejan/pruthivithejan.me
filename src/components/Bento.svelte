@@ -1,0 +1,53 @@
+<script>
+  import StackMarquee from "@/components/StackMarquee.svelte";
+</script>
+
+<div
+  class="mt-16 grid max-w-4xl grid-rows-[auto_auto_auto] gap-8 md:grid-cols-3 md:gap-10 mx-auto"
+>
+  <div
+    class="glass-container row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gray-950/60 p-4 before:bg-gray-100/10 md:col-span-2"
+  >
+    <h3 class="text-2xl">
+      <h1>Title</h1>
+    </h3>
+    <div class="max-w-md text-balance text-gray-300">
+      <p></p>
+    </div>
+    <slot />
+  </div>
+  <div
+    class="glass-container row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gray-950/60 p-4 before:bg-gray-100/10 md:col-span-1"
+  >
+    <h3 class="text-2xl">
+      <h1>Title</h1>
+    </h3>
+    <div class="max-w-md text-balance text-gray-300">
+      <p></p>
+    </div>
+    <slot />
+  </div>
+
+  <div
+    class="glass-container row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gray-950/60 p-4 before:bg-gray-100/10 md:col-span-1"
+  >
+    <h3 class="text-2xl">
+      <h1>Title</h1>
+    </h3>
+    <div class="max-w-md text-balance text-gray-300">
+      <p></p>
+    </div>
+    <slot />
+  </div>
+  <div
+    class="glass-container row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gray-950/60 p-4 before:bg-gray-100/10 md:col-span-2"
+  >
+    <h3 class="text-2xl">
+      <h1>Title</h1>
+    </h3>
+    <div class="max-w-md text-balance text-gray-300">
+      <p></p>
+    </div>
+    <StackMarquee />
+  </div>
+</div>
