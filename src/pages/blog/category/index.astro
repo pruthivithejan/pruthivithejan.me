@@ -1,12 +1,49 @@
 ---
 import Main from "@/layout/main.astro";
+import {getCollection, type CollectionEntry } from "astro:content"
+import { formatBlogPosts, slugify } from "@/lib/utils";
+
+import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+
+const allPosts = await getCollection("blog");
+const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts);
+const allCategories = formattedBlogPosts
+  .map((ctgr) => ctgr.data.category.toLowerCase())
+  .flat();
+
+
+const processedCategories = allCategories.reduce((acc, category) => {
+  const value = acc[category] || 0;
+
+  return {
+    ...acc,
+    [category]: value + 1,
+  };
+}, {});
+
+const showCount  = true;
 ---
 
 <Main title="Categories">
-  <section class="container" aria-label="Blog post categories">
-    <h1 class="h1 text-white">Categories</h1>
-    <div class="post-container">
-      {}
+  <section class="container min-h-screen pt-16" aria-label="Blog post categories">
+    <h1
+    class="text-center font-heading text-neutral-50 text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] md:block animate-enter"
+  >
+    Blog Catergories
+  </h1>
+    <div class="post-container pt-12">
+      {
+        Object.entries(processedCategories).map(([key, val]) => (
+          <li class=" text-neutral-100 list-none" >
+            <a href={`/blog/category/${slugify(key)}`} class="pb-4 flex items-center gap-2">
+              <h2 class="uppercase text-2xl hover:underline">{key}</h2>
+              {showCount && <Badge variant="secondary" class="font-bold">{val}</Badge>}
+            </a>
+            <Separator class="bg-neutral-700"/>
+          </li>
+        ))
+      }
     </div>
   </section>
 </Main>
