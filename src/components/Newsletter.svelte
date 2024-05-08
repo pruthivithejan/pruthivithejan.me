@@ -2,7 +2,6 @@
   import Reload from "svelte-radix/Reload.svelte";
   import { Button } from "@/components/ui/button/index";
   import { Input } from "@/components/ui/input/index";
-  import { toast } from "svelte-sonner";
 
   let email = "";
   let loading = false;
@@ -29,28 +28,15 @@
         const data = await response.json();
         if (data.message === "Subscription successful") {
           formStatus = "success";
-          toast("Subscription successful", {
-            description: "You have been subscribed to the newsletter.",
-          });
         } else {
           formStatus = "error";
-          toast("Subscription failed", {
-            description:
-              "There was an error subscribing you to the newsletter.",
-          });
         }
       } else {
         formStatus = "error";
-        toast("Subscription failed", {
-          description: "There was an error subscribing you to the newsletter.",
-        });
       }
     } catch (err) {
       console.error(err);
       formStatus = "error";
-      toast("Subscription failed", {
-        description: "There was an error subscribing you to the newsletter.",
-      });
     } finally {
       loading = false;
     }

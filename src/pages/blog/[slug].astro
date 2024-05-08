@@ -51,10 +51,12 @@ const relatedPosts = formattedPosts
     {image}
     {post}
   />
-  <div>
-    <div class="text-white leading-relaxed tracking-wide my-6 grid gap-3">
-      {Content ? <Content /> : <Fragment set:html={post.body || ''} />}
-      
+    <div>
+    <div class="grid items-center text-neutral-50 prose 
+    prose-h1:font-bold prose-h1:text-xl prose-h1:text-neutral-50
+     prose-img:rounded-xl
+     prose-headings:text-neutral-50">
+      <Content/>
     </div>
     <div class="py-6">
       <aside class="text-white flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">

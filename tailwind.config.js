@@ -10,6 +10,7 @@ const {
 /** @type {import('tailwindcss').Config} */
 const config = {
   plugins: [
+    require("@tailwindcss/typography"),
     function ({ matchUtilities, theme }) {
       matchUtilities(
         {
