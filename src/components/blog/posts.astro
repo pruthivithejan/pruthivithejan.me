@@ -5,10 +5,10 @@ import { slugify, formatDate } from  "@/lib/utils";
 const { category, title, date, image } = Astro.props;
 ---
 
-<header>
+<header class="pb-6">
   <div class="mt-24 text-white font-body pb-4 mb-10">
-    <h1 class="text-5xl font-bold mb-2">{title}</h1>
-    <small>
+    <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-2" transition:name="blog-title">{title}</h1>
+    <small >
       <a href={`/blog/category/${slugify(category)}/`} class="border-t-[2px] border-x-[1px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md font-semibold py-1.5 px-3"
         >{category}</a
       >

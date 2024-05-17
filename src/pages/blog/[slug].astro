@@ -4,6 +4,7 @@ import Main from "@/layout/main.astro";
 import Posts from "@/components/blog/posts.astro";
 import Category from "@/components/blog/category.astro";
 import Related from "@/components/blog/related.astro";
+import { Separator } from "@/components/ui/separator";
 
 import { formatBlogPosts } from "@/lib/utils";
 
@@ -43,6 +44,7 @@ const relatedPosts = formattedPosts
 ---
 
 <Main {title} {description} image={image} >
+  <div class="mx-3">
   <Posts
     {title}
     {description}
@@ -51,20 +53,21 @@ const relatedPosts = formattedPosts
     {image}
     {post}
   />
-    <div>
-    <div class="grid items-center text-neutral-50 prose 
+
+    <div class="grid max-w-6xl text-left justify-self-center text-neutral-50 prose 
     prose-h1:font-bold prose-h1:text-xl prose-h1:text-neutral-50
      prose-img:rounded-xl
      prose-headings:text-neutral-50">
       <Content/>
     </div>
     <div class="py-6">
-      <aside class="text-white flex justify-center gap-2 flex-row p-4" aria-label="Blog categories">
+      <section class="text-neutral-50 flex items-center gap-2 flex-col p-4 pt-12" aria-label="Blog categories">
+        <Separator class="w-[250px] bg-neutral-600" />
         <a href="/blog/category/">
-          <h2 class="text-md font-semibold uppercase">Blog Categories</h2>
+          <h2 class="text-md font-semibold uppercase ">Blog Categories</h2>
         </a>
         <Category showCount={false} />
-      </aside>
+      </section >
       {
         relatedPosts.length > 0 && (
           <aside class="text-white flex justify-center gap-2 flex-row p-4" aria-label="Related categories">

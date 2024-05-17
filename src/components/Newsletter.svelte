@@ -28,17 +28,30 @@
         const data = await response.json();
         if (data.message === "Subscription successful") {
           formStatus = "success";
+          setTimeout(() => {
+            formStatus = "";
+          }, 2000);
         } else {
           formStatus = "error";
+          setTimeout(() => {
+            formStatus = "";
+          }, 2000);
         }
       } else {
         formStatus = "error";
+        setTimeout(() => {
+          formStatus = "";
+        }, 2000);
       }
     } catch (err) {
       console.error(err);
       formStatus = "error";
+      setTimeout(() => {
+        formStatus = "";
+      }, 2000);
     } finally {
       loading = false;
+      email = "";
     }
   };
 </script>
@@ -72,11 +85,25 @@
               required
             />
           </div>
-          <Button type="submit" class="dark" disabled={loading}>
+          <Button
+            type="submit"
+            class="dark {formStatus === 'success'
+              ? 'bg-green-500'
+              : formStatus === 'error'
+                ? 'bg-red-500'
+                : ''}"
+            disabled={loading}
+          >
             {#if loading}
               <Reload class="mr-2 h-4 w-4 animate-spin" />
             {/if}
-            Subscribe
+            {#if formStatus === "success"}
+              Subscribed Successfully
+            {:else if formStatus === "error"}
+              Failed To Subscribe
+            {:else}
+              Subscribe
+            {/if}
           </Button>
         </div>
       </form>

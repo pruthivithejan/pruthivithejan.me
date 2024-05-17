@@ -13,7 +13,7 @@ const { data, url, TagType } = Astro.props;
 const { category, title, date, image, description } = data;
 ---
 
-<div class="glass-container w-[350px] animate-enter" style="--stagger: 2">
+<div class="glass-container w-[350px] animate-enter" style="--stagger: 2" >
   <Card.Root class="w-[350px] dark  ">
     <Card.Header>
       <Card.Title><a href={url}>{title}</a></Card.Title>
@@ -49,9 +49,9 @@ const { category, title, date, image, description } = data;
     <Card.Description>{description}</Card.Description>
     </Card.Content>
     <Card.Footer class="flex justify-between">
-      <Button
+      <Button 
               ><a href={url} 
-                >Read Post
+              transition:name="blog-title">Read Post
               </a></Button
             >
     </Card.Footer>

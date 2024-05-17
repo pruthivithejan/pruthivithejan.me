@@ -21,19 +21,18 @@ const formattedPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts, {
 ---
 
 <Main title="Pruthivi Thejan">
-  <div class="h-screen text-white font-heading mt-16 text-center">
+  <div class="min-h-screen text-white font-heading mt-16 text-center">
   <section>
     <div class="h-50 bg-dot-neutral-50/[0.2]">
     <div class="hidden md:flex absolute pointer-events-none inset-0 items-center justify-center bg-neutral-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/>
     <Hero client:load/>
   </section>
-  <!-- <Separator class="bg-neutral-600" />
-  <section>
+  <!-- <section>
 <h2 class="text-2xl">New Blog Posts</h2>
 <div class="container">
   {
     formattedPosts.map((post) => (
-      <PostCard data={post.data} url={post.slug} tagType="h3" />
+      <span>{post.data.title}</span>
     ))
   }
 </div>

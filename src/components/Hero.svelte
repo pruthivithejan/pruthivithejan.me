@@ -20,7 +20,7 @@
   }
 </script>
 
-<div class=" flex justify-center items-center mb-10">
+<div class="flex justify-center items-center mb-10">
   <h2 class="sr-only">Hero Section</h2>
   <div class="glass-container animate-enter">
     <div
@@ -36,12 +36,19 @@
     </div>
   </div>
 </div>
-<h1 class="text-6xl animate-enter" style="--stagger: 1">Pruthivi Thejan</h1>
-<h1 class="text-6xl font-body animate-enter" style="--stagger: 1">
+<h1 class="text-6xl animate-enter" style="--stagger: 1">
+  Pruthivi Thejan
+  <span></span>
+</h1>
+<h1 class="text-6xl font-body font-bold animate-enter" style="--stagger: 1">
   <RollingText {words} />
 </h1>
-<div class="container py-10 animate-enter" style="--stagger: 2">
-  <h2 class="text-4xl">{getAge("2002-06-28")}</h2>
-  <h2 class="text-4xl">Sri Lankan</h2>
-  <h2 class="text-4xl">Undergratuate at USJP</h2>
+<div
+  class="container py-10 animate-enter text-4xl text-center text-neutral-50/75"
+  style="--stagger: 2"
+>
+  <span class="text-neutral-50">{getAge("2002-06-28")}</span> year old, <br />
+  Undergratuate at
+  <span class="text-neutral-50">University of Sri Jayewardenepura</span>, <br />
+  based in <span class="text-neutral-50">Sri Lanka .</span>
 </div>
