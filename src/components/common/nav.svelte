@@ -2,8 +2,22 @@
   import navData from "@/data/navData";
   import { onMount } from "svelte";
   import * as Command from "@/components/ui/command/index";
-  import { Smile } from "lucide-svelte";
+  import * as Drawer from "@/components/ui/drawer/index";
+
+  import { Button } from "@/components/ui/button/index";
+  import {
+    Smile,
+    LibraryBig,
+    Layers3,
+    Github,
+    User,
+    Linkedin,
+    ExternalLink,
+    Twitter,
+    PanelTopClose,
+  } from "lucide-svelte";
   let open = false;
+  import { Separator } from "@/components/ui/separator/index";
 
   onMount(() => {
     function handleKeydown(e: KeyboardEvent) {
@@ -20,6 +34,15 @@
   });
   let links;
 
+  const x = (d: { goal: number; id: number }) => d.id;
+  const y = (d: { goal: number; id: number }) => d.goal;
+
+  let goal = 350;
+
+  function handleClick(adjustment: number) {
+    goal = Math.max(200, Math.min(400, goal + adjustment));
+  }
+
   onMount(() => {
     links = document.querySelectorAll("ul a");
     links.forEach((link) => {
@@ -29,7 +52,7 @@
           "rounded-md",
           "text-neutral-950",
           "font-bold",
-          "py-2",
+          "py-1.5",
           "px-4"
         );
       }
@@ -44,58 +67,115 @@
       class="flex flex-row items-center font-medium backdrop-blur-2xl bg-neutral-400/50 border border-gray-100/20 rounded-lg gap-2 text-base sm:text-lg md:text-xl lg:text-2xl"
     >
       {#each navData as item (item.path)}
-        <li class="px-1 py-2">
-          <a href={item.path} class="link px-3" target="_self">
+        <li class="py-2 px-1">
+          <a href={item.path} class="link px-2" target="_self">
             {item.name}
           </a>
         </li>
       {/each}
-      <li class="px-1 py-1 hidden lg:flex">
+
+      <li class="hidden lg:flex p-3 text-neutral-50/75">
+        <Separator orientation="vertical" class="bg-neutral-50/75" />
         <p class="text-sm">
-          <kbd
-            class="pointer-events-none inline-flex px-2 py-5 h-8 select-none items-center gap-0.5 rounded bg-muted text-neutral-950 font-bold opacity-100"
-          >
-            <span class="text-xs">⌘</span>K
-          </kbd>
+          <span class="text-xs gap-1">⌘ </span>K
         </p>
+      </li>
+      <li class="flex md:hidden">
+        <Drawer.Root>
+          <Drawer.Trigger asChild let:builder>
+            <Separator orientation="vertical" class="bg-neutral-50/75" />
+            <Button
+              builders={[builder]}
+              variant="ghost"
+              class="p-0 hover:bg-transparent"
+            >
+              <PanelTopClose class="mr-2 h-4 w-4" />
+            </Button>
+          </Drawer.Trigger>
+          <Drawer.Content class="dark text-neutral-50">
+            <div class="mx-auto w-full max-w-sm">
+              <Drawer.Header>
+                <Drawer.Description class="text-left">
+                  Routes</Drawer.Description
+                >
+                <Button href="/shelf" class="flex justify-start gap-2">
+                  <LibraryBig class="mr-2 h-4 w-4" />
+                  <span>Shelf</span>
+                </Button>
+                <Button href="/stack" class="flex justify-start gap-2">
+                  <Layers3 class="mr-2 h-4 w-4" />
+                  <span>Stack</span>
+                </Button>
+                <Drawer.Description class="text-left">
+                  Subdomains</Drawer.Description
+                >
+                <Button
+                  href="https:links.pruthivithejan.me"
+                  target="_blank"
+                  class="flex justify-start gap-2"
+                >
+                  <ExternalLink class="mr-2 h-4 w-4" />
+                  <span>links.pruthivithejan.me</span>
+                </Button>
+              </Drawer.Header>
+
+              <Drawer.Footer>
+                <Drawer.Close asChild let:builder>
+                  <Button builders={[builder]} variant="outline">Cancel</Button>
+                </Drawer.Close>
+              </Drawer.Footer>
+            </div>
+          </Drawer.Content>
+        </Drawer.Root>
       </li>
     </ul>
   </nav>
   <Command.Dialog bind:open class="dark">
-    <Command.Input placeholder="Type a command or search..." />
+    <Command.Input placeholder="Select an item or search..." />
     <Command.List>
-      <Command.Empty>No results found.</Command.Empty>
-      <Command.Group heading="Suggestions">
-        <Command.Item>
-          <Smile class="mr-2 h-4 w-4" />
-          <span>Calendar</span>
-        </Command.Item>
-        <Command.Item>
-          <Smile class="mr-2 h-4 w-4" />
-          <span>Search Emoji</span>
-        </Command.Item>
-        <Command.Item>
-          <Smile class="mr-2 h-4 w-4" />
-          <span>Calculator</span>
-        </Command.Item>
+      <Command.Empty>No route or link found.</Command.Empty>
+      <Command.Group heading="Routes">
+        <a href="/shelf">
+          <Command.Item>
+            <LibraryBig class="mr-2 h-4 w-4" />
+            <span>Shelf</span>
+          </Command.Item>
+        </a>
+        <a href="/stack">
+          <Command.Item>
+            <Layers3 class="mr-2 h-4 w-4" />
+            <span>Stack</span>
+          </Command.Item>
+        </a>
       </Command.Group>
       <Command.Separator />
-      <Command.Group heading="Settings">
-        <Command.Item>
-          <Smile class="mr-2 h-4 w-4" />
-          <span>Profile</span>
-          <Command.Shortcut>⌘P</Command.Shortcut>
-        </Command.Item>
-        <Command.Item>
-          <Smile class="mr-2 h-4 w-4" />
-          <span>Billing</span>
-          <Command.Shortcut>⌘B</Command.Shortcut>
-        </Command.Item>
-        <Command.Item>
-          <Smile class="mr-2 h-4 w-4" />
-          <span>Settings</span>
-          <Command.Shortcut>⌘S</Command.Shortcut>
-        </Command.Item>
+      <Command.Group heading="Subdomains">
+        <a href="https:links.pruthivithejan.me" target="_blank">
+          <Command.Item>
+            <ExternalLink class="mr-2 h-4 w-4" />
+            <span>links.pruthivithejan.me</span>
+          </Command.Item>
+        </a>
+      </Command.Group>
+      <Command.Group heading="Links">
+        <a href="https://github.com/pruthivithejan" target="_blank">
+          <Command.Item>
+            <Github class="mr-2 h-4 w-4" />
+            <span>Github</span>
+          </Command.Item>
+        </a>
+        <a href="https://lk.linkedin.com/in/pruthivithejan" target="_blank">
+          <Command.Item>
+            <Linkedin class="mr-2 h-4 w-4" />
+            <span>LinkedIn</span>
+          </Command.Item>
+        </a>
+        <a href="https://x.com/pruthivithejan" target="_blank">
+          <Command.Item>
+            <Twitter class="mr-2 h-4 w-4" />
+            <span>X</span>
+          </Command.Item>
+        </a>
       </Command.Group>
     </Command.List>
   </Command.Dialog>

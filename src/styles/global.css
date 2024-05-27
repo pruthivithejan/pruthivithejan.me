@@ -80,13 +80,12 @@
 /* Custom Fonts */
 @layer base {
   @font-face {
-    font-family: Geist;
-    font-weight: 400;
-    src: url(/fonts/GeistVF.woff2) format("woff2");
-  }
-  @font-face {
     font-family: Staatliches;
     font-weight: 400;
     src: url(/fonts/Staatliches-Regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: GeneralSans;
+    src: url(/fonts/GeneralSans.woff2) format("woff2");
   }
 }

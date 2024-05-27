@@ -47,7 +47,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        body: ["Geist"],
+        body: ["GeneralSans"],
         heading: ["Staatliches"],
       },
       colors: {

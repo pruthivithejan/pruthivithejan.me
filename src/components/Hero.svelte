@@ -40,7 +40,7 @@
   Pruthivi Thejan
   <span></span>
 </h1>
-<h1 class="text-6xl font-body font-bold animate-enter" style="--stagger: 1">
+<h1 class="text-6xl font-body font-semibold animate-enter" style="--stagger: 1">
   <RollingText {words} />
 </h1>
 <div
@@ -49,6 +49,7 @@
 >
   <span class="text-neutral-50">{getAge("2002-06-28")}</span> year old, <br />
   Undergratuate at
-  <span class="text-neutral-50">University of Sri Jayewardenepura</span>, <br />
+  <span class="text-neutral-50">University of <br /> Sri Jayewardenepura</span>,
+  <br />
   based in <span class="text-neutral-50">Sri Lanka .</span>
 </div>
