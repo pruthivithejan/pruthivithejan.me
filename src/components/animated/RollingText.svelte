@@ -10,7 +10,7 @@
     roller = setInterval(() => {
       if (index === words.length - 1) index = 0;
       else index++;
-    }, 1250);
+    }, 3500);
   });
 
   onDestroy(() => {

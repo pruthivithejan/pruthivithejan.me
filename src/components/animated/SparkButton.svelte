@@ -24,14 +24,13 @@
   .animation-container {
     --transition: 0.25s;
     --spark: 3s;
-    --bg: black;
     background: var(--bg);
     padding: 6px 18px;
     display: grid;
     border-radius: 9999px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 1000px 0 0 hsl(0 0% 20%) inset;
+    box-shadow: 0 1000px 0 0 hsl(0 0% 0%) inset;
     transition:
       box-shadow var(--transition),
       background var(--transition),
@@ -39,7 +38,7 @@
   }
 
   .animation-container:hover .backdrop {
-    background: rgb(20 20 20);
+    background: #171717;
   }
 
   .animation-container:hover {
@@ -52,7 +51,7 @@
     border-radius: 9999px;
     rotate: 0deg;
     overflow: hidden;
-    mask: linear-gradient(white, transparent 50%);
+    mask: linear-gradient(#fafafa, transparent 50%);
     animation: flip calc(var(--spark) * 2) infinite steps(2, end);
   }
 
@@ -73,7 +72,7 @@
     rotate: 0;
     transform: rotate(-90deg);
     opacity: 1;
-    background: conic-gradient(from 0deg, transparent 0 340deg, white 360deg);
+    background: conic-gradient(from 0deg, transparent 0 340deg, #fafafa 360deg);
     transition: opacity var(--transition);
     animation: rotate var(--spark) linear infinite both;
   }
@@ -81,7 +80,7 @@
   .backdrop {
     position: absolute;
     inset: 1px;
-    background: var(--bg);
+    background: hsl(var(--foreground));
     border-radius: 9999px;
     transition: background var(--transition) opacity var(--transition);
   }
@@ -94,6 +93,6 @@
 
   .text {
     z-index: 1;
-    color: rgb(203 213 225);
+    color: #fafafa;
   }
 </style>

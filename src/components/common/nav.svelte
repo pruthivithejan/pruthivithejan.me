@@ -51,7 +51,10 @@
           "bg-neutral-100",
           "rounded-md",
           "text-neutral-950",
-          "font-bold",
+          "font-semibold",
+          "shadow-md",
+          "shadow-neutral-100",
+          "shadow-inner",
           "py-1.5",
           "px-4"
         );
@@ -64,7 +67,7 @@
   <h2 class="sr-only">Navigation Bar</h2>
   <nav class="fixed bottom-4 z-50 text-neutral-50">
     <ul
-      class="flex flex-row items-center font-medium backdrop-blur-2xl bg-neutral-400/50 border border-gray-100/20 rounded-lg gap-2 text-base sm:text-lg md:text-xl lg:text-2xl"
+      class="flex flex-row items-center font-medium backdrop-blur-2xl bg-neutral-200/10 border border-neutral-100/20 rounded-lg gap-2 text-base"
     >
       {#each navData as item (item.path)}
         <li class="py-2 px-1">
@@ -74,20 +77,20 @@
         </li>
       {/each}
 
-      <li class="hidden lg:flex p-3 text-neutral-50/75">
+      <li class="hidden xl:flex p-3 text-neutral-50/75">
         <Separator orientation="vertical" class="bg-neutral-50/75" />
         <p class="text-sm">
-          <span class="text-xs gap-1">⌘ </span>K
+          <span class="text-xs gap-1">⌘</span>K
         </p>
       </li>
-      <li class="flex md:hidden">
+      <li class="flex xl:hidden">
         <Drawer.Root>
           <Drawer.Trigger asChild let:builder>
             <Separator orientation="vertical" class="bg-neutral-50/75" />
             <Button
               builders={[builder]}
               variant="ghost"
-              class="p-0 hover:bg-transparent"
+              class="p-0 hover:bg-transparent focus:bg-transparent active:bg-transparent hover:text-neutral-50"
             >
               <PanelTopClose class="mr-2 h-4 w-4" />
             </Button>

@@ -4,24 +4,21 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #a3a3a3;
+  background-color: hsl(var(--muted-foreground));
+  height: 100px;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #e5e5e5;
+  background-color: hsl(var(--secondary));
 }
 
 /* Glass Container */
 .glass-container {
   position: relative;
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .glass-container::before {
-  @apply absolute -inset-[10px] -z-10 rounded-xl border border-gray-100/20 bg-gray-200/10 backdrop-blur-md;
+  @apply absolute -inset-[8px] -z-10 rounded-xl border border-neutral-100/20 bg-neutral-200/10 backdrop-blur-md;
   content: "";
 }

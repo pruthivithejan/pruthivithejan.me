@@ -80,12 +80,33 @@
 /* Custom Fonts */
 @layer base {
   @font-face {
-    font-family: Staatliches;
+    font-family: BebasNeue;
     font-weight: 400;
-    src: url(/fonts/Staatliches-Regular.woff2) format("woff2");
+    src: url(/fonts/BebasNeue-Regular.woff2) format("woff2");
   }
   @font-face {
-    font-family: GeneralSans;
-    src: url(/fonts/GeneralSans.woff2) format("woff2");
+    font-family: JetBrainsMono;
+    font-weight: 400;
+    src: url(/fonts/JetBrainsMono-Regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Switzer;
+    font-weight: 400;
+    src: url(/fonts/Switzer-Regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: Switzer;
+    font-weight: 600;
+    src: url(/fonts/Switzer-Semibold.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: InstrumentSerif-Italic;
+    font-weight: 400;
+    src: url(/fonts/InstrumentSerif-Italic.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SquarePeg;
+    font-weight: 400;
+    src: url(/fonts/SquarePeg-Regular.woff2) format("woff2");
   }
 }
