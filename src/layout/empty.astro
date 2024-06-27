@@ -5,10 +5,9 @@ import "../styles/animations.css"
 //component imports
 import Head from "./head.astro";
 import Nav from "@/components/common/nav.svelte";
-
 const {
   title = "Pruthivi Thejan",
-  description = "Personal website of Pruthivi Thejan",
+  description = "Personal Website Of Pruthivi Thejan",
   image,
   data,
   robots,
@@ -17,9 +16,9 @@ const {
 
 <html lang="en">
   <Head {title} {description} {image} {data} {robots} />
-  <body class="max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-6xl mx-auto bg-neutral-900 font-body">
-    <Nav />
-    <main>
+  <body class="antialiased mx-auto bg-neutral-950  font-body min-h-screen flex flex-col">
+    <Nav client:load />
+    <main class="">
       <slot>Default</slot>
     </main>
   </body>

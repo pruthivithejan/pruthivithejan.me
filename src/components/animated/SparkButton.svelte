@@ -24,13 +24,13 @@
   .animation-container {
     --transition: 0.25s;
     --spark: 3s;
-    background: var(--bg);
+    background: hsl(var(--foreground));
     padding: 6px 18px;
     display: grid;
     border-radius: 9999px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 1000px 0 0 hsl(0 0% 0%) inset;
+    box-shadow: 0 1000px 0 0 hsl(0 0% 20%) inset;
     transition:
       box-shadow var(--transition),
       background var(--transition),

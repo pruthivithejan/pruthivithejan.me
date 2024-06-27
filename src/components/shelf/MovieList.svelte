@@ -1,6 +1,5 @@
 <script>
   import StarRating from "./StarRating.svelte";
-  import * as Table from "@/components/ui/table";
 
   const movies = [
     {
@@ -50,27 +49,4 @@
 
 <div>
   <h2 class="text-2xl font-bold font-heading">Movies</h2>
-  <Table.Root>
-    <Table.Caption>A list of my favorite movies.</Table.Caption>
-    <Table.Header>
-      <Table.Row>
-        <Table.Head>Movie</Table.Head>
-        <Table.Head>Director</Table.Head>
-        <Table.Head class="w-[100px]">Year</Table.Head>
-        <Table.Head class="text-right">Rating</Table.Head>
-      </Table.Row>
-    </Table.Header>
-    <Table.Body>
-      {#each movies as movie, i (i)}
-        <Table.Row>
-          <Table.Cell class="font-medium">{movie.movieName}</Table.Cell>
-          <Table.Cell>{movie.director}</Table.Cell>
-          <Table.Cell>{movie.year}</Table.Cell>
-          <Table.Cell class="flex justify-end text-right"
-            ><StarRating rating={movie.rating} /></Table.Cell
-          >
-        </Table.Row>
-      {/each}
-    </Table.Body>
-  </Table.Root>
 </div>

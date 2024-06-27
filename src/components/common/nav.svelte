@@ -53,7 +53,7 @@
           "text-neutral-950",
           "font-semibold",
           "shadow-md",
-          "shadow-neutral-100",
+          "shadow-neutral-100/10",
           "shadow-inner",
           "py-1.5",
           "px-4"
@@ -76,9 +76,8 @@
           </a>
         </li>
       {/each}
-
+      <Separator orientation="vertical" class="bg-neutral-100/20" />
       <li class="hidden xl:flex p-3 text-neutral-50/75">
-        <Separator orientation="vertical" class="bg-neutral-50/75" />
         <p class="text-sm">
           <span class="text-xs gap-1">⌘</span>K
         </p>
@@ -86,7 +85,7 @@
       <li class="flex xl:hidden">
         <Drawer.Root>
           <Drawer.Trigger asChild let:builder>
-            <Separator orientation="vertical" class="bg-neutral-50/75" />
+            <Separator orientation="vertical" class="bg-neutral-100/20" />
             <Button
               builders={[builder]}
               variant="ghost"
@@ -124,7 +123,11 @@
 
               <Drawer.Footer>
                 <Drawer.Close asChild let:builder>
-                  <Button builders={[builder]} variant="outline">Cancel</Button>
+                  <Button
+                    builders={[builder]}
+                    variant="outline"
+                    class="bg-neutral-100/20 backdrop-blur-2xl">Close</Button
+                  >
                 </Drawer.Close>
               </Drawer.Footer>
             </div>

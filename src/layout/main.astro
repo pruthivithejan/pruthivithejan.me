@@ -9,7 +9,7 @@ import Nav from "@/components/common/nav.svelte";
 
 const {
   title = "Pruthivi Thejan",
-  description = "Personal Website of Pruthivi Thejan",
+  description = "Personal Website Of Pruthivi Thejan",
   image,
   data,
   robots,
@@ -18,11 +18,11 @@ const {
 
 <html lang="en">
   <Head {title} {description} {image} {data} {robots} />
-  <body class="subpixel-antialiased max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-6xl mx-auto bg-neutral-950 font-body min-h-screen flex flex-col">
+  <body class="antialiased mx-auto bg-neutral-950 font-body min-h-screen flex flex-col">
     <Nav client:load />
     <main class="">
       <slot>Default</slot>
     </main>
-    <Footer />
+   <Footer />
   </body>
 </html>

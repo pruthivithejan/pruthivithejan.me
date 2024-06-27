@@ -146,10 +146,17 @@ declare module 'astro:content' {
 
 	type DataEntryMap = {
 		"work": {
+"jesa": {
+	id: "jesa";
+  collection: "work";
+  data: any
+};
+};
 "links": {
 	id: "links";
   collection: "work";
   data: any
+};
 };
 "pruthivithejan": {
 	id: "pruthivithejan";

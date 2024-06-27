@@ -5,6 +5,7 @@ import { formatBlogPosts, slugify } from "@/lib/utils";
 
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import Heading from "@/components/common/heading.astro";
 
 const allPosts = await getCollection("blog");
 const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts);
@@ -27,11 +28,7 @@ const showCount  = true;
 
 <Main title="Categories">
   <section class="container min-h-screen pt-16" aria-label="Blog post categories">
-    <h1
-    class="text-center font-heading text-neutral-50 text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] md:block animate-enter"
-  >
-    Blog Catergories
-  </h1>
+  <Heading text="Blog Catergories"/>
     <div class="post-container pt-12">
       {
         Object.entries(processedCategories).map(([key, val]) => (

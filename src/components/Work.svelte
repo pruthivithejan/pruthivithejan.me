@@ -16,16 +16,11 @@
   });
 </script>
 
-<div
-  class="flex flex-col gap-8 items-center md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-12"
->
+<div class="grid grid-rows-4 grid-flow-col gap-4">
   {#if works.length > 0}
     {#each works as work (work.id)}
-      <div
-        class="glass-container w-[350px] animate-enter items-center"
-        style="--stagger: 2"
-      >
-        <Card.Root class="w-[350px] dark h-full">
+      <div class="glass-container w-[350px] animate-enter items-center">
+        <Card.Root class="w-[350px] dark h-[500px]">
           <Card.Header>
             <Card.Title>{work.data.work_name}</Card.Title>
             <Card.Description>{work.data.work_description}</Card.Description>
