@@ -22,3 +22,11 @@
   @apply absolute -inset-[8px] -z-10 rounded-xl border border-neutral-100/20 bg-neutral-200/10 backdrop-blur-md;
   content: "";
 }
+
+/* .selection\:text-\[\#007763fd\] ::selection {
+  color: #007763fd;
+}
+
+.selection\:bg-\[\#00cc9937\] ::selection {
+  background-color: #00cc9937;
+} */

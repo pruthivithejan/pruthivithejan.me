@@ -5,30 +5,30 @@ import { slugify, formatDate } from  "@/lib/utils";
 const { category, title, date, image } = Astro.props;
 ---
 
-<header class="pb-6">
+<header class="pb-6 flex flex-col items-center justify-center">
   <div class="mt-24 text-white font-body pb-4 mb-10">
-    <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-2" transition:name="blog-title">{title}</h1>
-    <small >
-      <a href={`/blog/category/${slugify(category)}/`} class="border-t-[2px] border-x-[1px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md font-semibold py-1.5 px-3"
+    <h1 class="scroll-m-20 text-center text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-neutral-50 to-neutral-500 bg-clip-text text-transparent pb-6" transition:name="blog-title">{title}</h1>
+    <div class="flex flex-col space-y-6 items-center">
+    <span>
+      <a href={`/blog/category/${slugify(category)}/`} class="border-t-[1px] border-x-[.5px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md  py-1 px-2"
         >{category}</a
       >
-    </small>
-    &#8226;
-    <small class="text-sm">
-      {
-        formatDate(date)
-      }
-    </small>
+    </span>
+  <div class="flex items-center text-neutral-400">
+    <span class="text-md">Published: {formatDate(date)}</span>
+    <!-- <span class="text-md ml-4">Edited: {formatDate(date)}</span> -->
+  </div>
+</div>
   </div>
   <Image
     src={image.src}
     alt={image.alt}
-    width="1200"
-    height="600"
+    width="900"
+    height="450"
     format="webp"
     fit="cover"
-    quality={80}
+    quality={100}
     aspectRatio="5:2"
-    class="rounded-md"
+    class="rounded-xl border border-neutral-700"
   />
 </header>

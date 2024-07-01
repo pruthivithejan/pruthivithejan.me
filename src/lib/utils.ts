@@ -76,6 +76,9 @@ export function slugify(text: string): string {
 export function formatDate(date: string | number | Date): string {
   return new Date(date).toLocaleDateString("en-US", {
     timeZone: "UTC",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 }
 

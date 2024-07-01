@@ -19,14 +19,14 @@ const links = [
     href: "https://x.com/pruthivithejan",
     icon: { name: "social/x", side: "right", height: "24", width: "24" },
   },
-  // {
-  //   href: "https://www.threads.net/@pruthivithejan",
-  //   icon: { name: "social/threads", side: "right", height: "32", width: "32" },
-  // },
-  // {
-  //   href: "https://www.instagram.com/pruthivithejan/",
-  //   icon: { name: "social/instagram", side: "right", height: "32", width: "32" },
-  // },
+  {
+    href: "https://www.threads.net/@pruthivithejan",
+    icon: { name: "social/threads", side: "right", height: "24", width: "24" },
+  },
+  {
+    href: "/rss.xml",
+    icon: { name: "social/rss", side: "right", height: "24", width: "24" },
+  },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -34,13 +34,13 @@ const currentYear = new Date().getFullYear();
  
 ---
 
-<footer class="py-6 pb-16 overflow-hidden">
+<footer class="py-6 pb-16">
   <h2 class="sr-only">
     Footer
   </h2>
   <div class="w-full h-px bg-gradient-to-r from-transparent 
-   via-neutral-500 to-transparent" />
-  <div class="gap-4 pt-8 flex items-center justify-center"> 
+   via-neutral-500 to-transparent " />
+  <div class="gap-4 pt-16 flex items-center justify-center"> 
   </div>
   <Newsletter client:visible/>
   <div class="flex flex-col justify-center items-center mx-auto gap-2 py-8">
@@ -63,7 +63,7 @@ const currentYear = new Date().getFullYear();
       </Button>
     </div>
     <span class="mt-4 text-sm text-muted-foreground select-none">© {currentYear} Pruthivi Thejan</span>
-    <div class="flex justify-center gap-4">
+    <div class="mt-4 flex justify-center gap-4">
       <>
       {links.map((link, index) => (
         <Link

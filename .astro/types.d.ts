@@ -151,12 +151,10 @@ declare module 'astro:content' {
   collection: "work";
   data: any
 };
-};
 "links": {
 	id: "links";
   collection: "work";
   data: any
-};
 };
 "pruthivithejan": {
 	id: "pruthivithejan";

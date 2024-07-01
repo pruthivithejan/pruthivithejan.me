@@ -6,7 +6,6 @@ import PostCard from "@/components/blog/postCard.astro";
 import Category from "@/components/blog/category.astro";
 import Pagination from "@/components/blog/pagination.astro";
 import SparkButton from "@/components/animated/SparkButton.svelte";
-import { Separator } from "@/components/ui/separator/index";
 import Heading from "@/components/common/heading.astro";
 import { formatBlogPosts } from "../../lib/utils";
 
@@ -37,7 +36,8 @@ const { page } = Astro.props;
     > Weekly topics cover tech trends, software, and productivity. Beyond grammar fixes, the aim is knowledge expansion and writing refinement. Quality over quantity is prioritized.
     </p>
   </div>
-    <div class="flex flex-col gap-8 items-center md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-12">
+  <div class="px-8 py-24 pt-0 mx-auto md:px-12 lg:px-32 max-w-7xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-28 justify-items-center">
       {
         page.data.map((post: { data: any; slug: any; }) => (
           <PostCard
@@ -50,10 +50,11 @@ const { page } = Astro.props;
       }
       </div>
     </div>
+    </div>
   <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
   <section class="text-neutral-50 flex items-center gap-2 flex-col p-4 pt-12" aria-label="Blog categories">
-    <Separator class="w-[250px] bg-neutral-600" />
+    <span class="text-muted-foreground select-none">&#10045;&nbsp;&#10045;&nbsp;&#10045;</span>
     <a href="/blog/category/">
       <h2 class="text-md font-semibold uppercase ">Blog Categories</h2>
     </a>
