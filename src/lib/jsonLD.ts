@@ -2,26 +2,26 @@ import siteData from "../data/siteData.json";
 import { slugify } from "./utils";
 
 interface Post {
-  title: string;
-  description: string;
-  image: { src: string };
-  author: string;
-  date: string;
+	title: string;
+	description: string;
+	image: { src: string };
+	author: string;
+	date: string;
 }
 
 interface JsonLDGeneratorProps {
-  type: "post" | "website";
-  post?: Post;
-  url?: string;
+	type: "post" | "website";
+	post?: Post;
+	url?: string;
 }
 
 export default function jsonLDGenerator({
-  type,
-  post,
-  url,
+	type,
+	post,
+	url,
 }: JsonLDGeneratorProps): string {
-  if (type === "post" && post) {
-    return `<script type="application/ld+json">
+	if (type === "post" && post) {
+		return `<script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -40,8 +40,8 @@ export default function jsonLDGenerator({
         "datePublished": "${post.date}"
       }
     </script>`;
-  }
-  return `<script type="application/ld+json">
+	}
+	return `<script type="application/ld+json">
       {
       "@context": "https://schema.org/",
       "@type": "WebSite",

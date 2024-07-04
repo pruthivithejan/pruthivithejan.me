@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
-import { slugify, formatDate } from  "@/lib/utils";
-const { category, title, date, image } = Astro.props;
+import { slugify, formatDate } from "@/lib/utils";
+const { category, title, date, edited, image } = Astro.props;
 ---
 
 <header class="pb-6 flex flex-col items-center justify-center">
@@ -10,13 +10,15 @@ const { category, title, date, image } = Astro.props;
     <h1 class="scroll-m-20 text-center text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-neutral-50 to-neutral-500 bg-clip-text text-transparent pb-6" transition:name="blog-title">{title}</h1>
     <div class="flex flex-col space-y-6 items-center">
     <span>
-      <a href={`/blog/category/${slugify(category)}/`} class="border-t-[1px] border-x-[.5px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md  py-1 px-2"
+      <a href={`/blog/category/${slugify(category)}/`} class="border-t-[1px] border-x-[.5px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md py-1 px-2"
         >{category}</a
       >
     </span>
-  <div class="flex items-center text-neutral-400">
+  <div class="flex flex-col md:space-x-4 md:flex-row gap-2 items-center justify-center text-neutral-400">
     <span class="text-md">Published: {formatDate(date)}</span>
-    <!-- <span class="text-md ml-4">Edited: {formatDate(date)}</span> -->
+    { edited && (
+    <span class="text-md">Edited: {formatDate(edited)} </span>
+    ) }
   </div>
 </div>
   </div>

@@ -1,19 +1,19 @@
 <script>
-  import * as Card from "@/components/ui/card/index";
-  import { Button } from "@/components/ui/button/index";
-  import { Badge } from "@/components/ui/badge/index";
-  import { Skeleton } from "@/components/ui/skeleton";
-  import { onMount } from "svelte";
-  let works = [];
+import * as Card from "@/components/ui/card/index";
+import { Button } from "@/components/ui/button/index";
+import { Badge } from "@/components/ui/badge/index";
+import { Skeleton } from "@/components/ui/skeleton";
+import { onMount } from "svelte";
+let works = [];
 
-  onMount(async () => {
-    const res = await fetch("/api/getWork.json");
-    const data = await res.json();
-    works = data.map((work) => ({ ...work, loading: true }));
-    setTimeout(() => {
-      works = works.map((work) => ({ ...work, loading: false }));
-    }, 2000);
-  });
+onMount(async () => {
+	const res = await fetch("/api/getWork.json");
+	const data = await res.json();
+	works = data.map((work) => ({ ...work, loading: true }));
+	setTimeout(() => {
+		works = works.map((work) => ({ ...work, loading: false }));
+	}, 2000);
+});
 </script>
 
 <div class="px-8 py-24 pt-0 mx-auto md:px-12 lg:px-32 max-w-7xl">

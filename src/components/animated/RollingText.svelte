@@ -1,21 +1,21 @@
 <script>
-  import { onMount, onDestroy } from "svelte";
-  import { slide } from "svelte/transition";
+import { onMount, onDestroy } from "svelte";
+import { slide } from "svelte/transition";
 
-  export let words = [];
-  let index = 0;
-  let roller;
+export let words = [];
+let index = 0;
+let roller;
 
-  onMount(() => {
-    roller = setInterval(() => {
-      if (index === words.length - 1) index = 0;
-      else index++;
-    }, 3500);
-  });
+onMount(() => {
+	roller = setInterval(() => {
+		if (index === words.length - 1) index = 0;
+		else index++;
+	}, 3500);
+});
 
-  onDestroy(() => {
-    clearInterval(roller);
-  });
+onDestroy(() => {
+	clearInterval(roller);
+});
 </script>
 
 {#key index}

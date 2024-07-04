@@ -1,11 +1,11 @@
 <script>
-  export let text = "";
-  // export let icon = "";
-  // export let size = "12";
+export let text = "";
+// export let icon = "";
+// export let size = "12";
 
-  // function getIcon(icon, size) {
-  //   return `<svg width="${size}" height="${size} fill="white"><use xlink:href="/icons/${icon}.svg#icon"></use></svg>`;
-  // }
+// function getIcon(icon, size) {
+//   return `<svg width="${size}" height="${size} fill="white"><use xlink:href="/icons/${icon}.svg#icon"></use></svg>`;
+// }
 </script>
 
 <button class="animation-container">

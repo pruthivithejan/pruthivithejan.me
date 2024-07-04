@@ -1,5 +1,5 @@
 ---
-import {getCollection, type CollectionEntry } from "astro:content"
+import { getCollection, type CollectionEntry } from "astro:content";
 import Main from "./main.astro";
 import Posts from "@/components/blog/posts.astro";
 import Category from "@/components/blog/category.astro";
@@ -11,17 +11,20 @@ const { data } = Astro.props;
 const { title, description, date, category, author } = data;
 
 const allPosts = await getCollection("blog");
-const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts, {
-  sortByDate: false,
-});
+const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(
+	allPosts,
+	{
+		sortByDate: false,
+	},
+);
 
 const relatedPosts = formattedBlogPosts
-  .filter(
-    (post) =>
-      post.data.category.toLowerCase() === category.toLowerCase() &&
-      post.data.title !== title
-  )
-  .slice(0, 3);
+	.filter(
+		(post) =>
+			post.data.category.toLowerCase() === category.toLowerCase() &&
+			post.data.title !== title,
+	)
+	.slice(0, 3);
 ---
 
 <Main {title} {description}>

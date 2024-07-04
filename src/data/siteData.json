@@ -1,8 +1,8 @@
 {
-  "title": "Pruthivi Thejan",
-  "description": "The website of a Sri Lankan boy named after planet Earth.",
-  "image": {
-    "src": "/images/image-default.jpg",
-    "alt": "Pruthivi Thejan's Personal Portfolio"
-  }
+	"title": "Pruthivi Thejan",
+	"description": "The website of a Sri Lankan boy named after planet Earth.",
+	"image": {
+		"src": "/images/image-default.jpg",
+		"alt": "Pruthivi Thejan's Personal Portfolio"
+	}
 }

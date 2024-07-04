@@ -1,25 +1,25 @@
 ---
-import {getCollection, type CollectionEntry } from "astro:content"
+import { getCollection, type CollectionEntry } from "astro:content";
 // component imports
 import Main from "@/layout/main.astro";
 import PostCard from "@/components/blog/postCard.astro";
 import Heading from "@/components/common/heading.astro";
 // utils
-import { slugify, formatBlogPosts} from "@/lib/utils";
+import { slugify, formatBlogPosts } from "@/lib/utils";
 import categories from "@/data/categories";
 
 export async function getStaticPaths() {
- return categories.map(category => ({
-    params: { category: category.slug },
-    props: { name: category.name },
- }));
+	return categories.map((category) => ({
+		params: { category: category.slug },
+		props: { name: category.name },
+	}));
 }
 const { category } = Astro.params;
 const { name } = Astro.props;
 const allPosts = await getCollection("blog");
 const formattedPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts);
 const catPosts = formattedPosts.filter(
-  (post) => slugify(post.data.category) === category
+	(post) => slugify(post.data.category) === category,
 );
 ---
 

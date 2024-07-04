@@ -1,13 +1,13 @@
 ---
 //utility imports
 import { getCollection, type CollectionEntry } from "astro:content";
-import "@/styles/global.css"
+import "@/styles/global.css";
 import { formatBlogPosts } from "@/lib/utils";
 
 //component imports
 import Main from "@/layout/main.astro";
 import Hero from "@/components/common/hero.astro";
-import StackMarquee from "@/components/StackMarquee.svelte"
+import StackMarquee from "@/components/StackMarquee.svelte";
 import PostCard from "@/components/blog/postCard.astro";
 
 import * as Carousel from "@/components/ui/carousel/index.js";
@@ -15,9 +15,8 @@ import { Separator } from "@/components/ui/separator";
 
 const allPosts = await getCollection("blog");
 const formattedPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts, {
-  limit: 3,
+	limit: 3,
 });
-
 ---
 
 <Main title="Pruthivi Thejan">

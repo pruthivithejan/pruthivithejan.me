@@ -1,6 +1,6 @@
 ---
 import Main from "@/layout/main.astro";
-import {getCollection, type CollectionEntry } from "astro:content"
+import { getCollection, type CollectionEntry } from "astro:content";
 import { formatBlogPosts, slugify } from "@/lib/utils";
 
 import { Separator } from "@/components/ui/separator";
@@ -10,20 +10,19 @@ import Heading from "@/components/common/heading.astro";
 const allPosts = await getCollection("blog");
 const formattedBlogPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts);
 const allCategories = formattedBlogPosts
-  .map((ctgr) => ctgr.data.category.toLowerCase())
-  .flat();
-
+	.map((ctgr) => ctgr.data.category.toLowerCase())
+	.flat();
 
 const processedCategories = allCategories.reduce((acc, category) => {
-  const value = acc[category] || 0;
+	const value = acc[category] || 0;
 
-  return {
-    ...acc,
-    [category]: value + 1,
-  };
+	return {
+		...acc,
+		[category]: value + 1,
+	};
 }, {});
 
-const showCount  = true;
+const showCount = true;
 ---
 
 <Main title="Categories">

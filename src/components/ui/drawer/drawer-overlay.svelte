@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from "vaul-svelte";
-	import { cn } from "src/lib/utils.js";
+import { Drawer as DrawerPrimitive } from "vaul-svelte";
+import { cn } from "src/lib/utils.js";
 
-	type $$Props = DrawerPrimitive.OverlayProps;
+type $$Props = DrawerPrimitive.OverlayProps;
 
-	export let el: $$Props["el"] = undefined;
-	let className: $$Props["class"] = undefined;
-	export { className as class };
+export let el: $$Props["el"] = undefined;
+let className: $$Props["class"] = undefined;
+export { className as class };
 </script>
 
 <DrawerPrimitive.Overlay

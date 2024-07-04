@@ -4,34 +4,32 @@ import Link from "@/components/common/link.astro";
 import Newsletter from "@/components/Newsletter.svelte";
 import { Button } from "@/components/ui/button/index";
 import { Mail } from "lucide-svelte";
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 
 const links = [
-  {
-    href: "https://github.com/pruthivithejan",
-    icon: { name: "social/github", side: "right", height: "24", width: "24" },
-  },
-  {
-    href: "https://lk.linkedin.com/in/pruthivithejan",
-    icon: { name: "social/linkedin", side: "right", height: "24", width: "24" },
-  },
-  {
-    href: "https://x.com/pruthivithejan",
-    icon: { name: "social/x", side: "right", height: "24", width: "24" },
-  },
-  {
-    href: "https://www.threads.net/@pruthivithejan",
-    icon: { name: "social/threads", side: "right", height: "24", width: "24" },
-  },
-  {
-    href: "/rss.xml",
-    icon: { name: "social/rss", side: "right", height: "24", width: "24" },
-  },
+	{
+		href: "https://github.com/pruthivithejan",
+		icon: { name: "social/github", side: "right", height: "24", width: "24" },
+	},
+	{
+		href: "https://lk.linkedin.com/in/pruthivithejan",
+		icon: { name: "social/linkedin", side: "right", height: "24", width: "24" },
+	},
+	{
+		href: "https://x.com/pruthivithejan",
+		icon: { name: "social/x", side: "right", height: "24", width: "24" },
+	},
+	{
+		href: "https://www.threads.net/@pruthivithejan",
+		icon: { name: "social/threads", side: "right", height: "24", width: "24" },
+	},
+	{
+		href: "/rss.xml",
+		icon: { name: "social/rss", side: "right", height: "24", width: "24" },
+	},
 ];
 
 const currentYear = new Date().getFullYear();
-
- 
 ---
 
 <footer class="py-6 pb-16">

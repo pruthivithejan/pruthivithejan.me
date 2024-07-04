@@ -126,6 +126,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"How to create a newsletter with Resend.md": {
+	id: "How to create a newsletter with Resend.md";
+  slug: "how-to-create-a-newsletter-with-resend";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "Why I’m still getting to learn C.md": {
 	id: "Why I’m still getting to learn C.md";
   slug: "why-im-still-getting-to-learn-c";

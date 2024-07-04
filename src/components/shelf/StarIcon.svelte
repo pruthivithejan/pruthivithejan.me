@@ -1,6 +1,6 @@
 <script>
-  export let props = {};
-  export let fill = "";
+export let props = {};
+export let fill = "";
 </script>
 
 <svg

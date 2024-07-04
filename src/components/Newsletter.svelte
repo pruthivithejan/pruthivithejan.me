@@ -1,59 +1,59 @@
 <script lang="ts">
-  import Reload from "svelte-radix/Reload.svelte";
-  import { Button } from "@/components/ui/button/index";
-  import { Input } from "@/components/ui/input/index";
+import Reload from "svelte-radix/Reload.svelte";
+import { Button } from "@/components/ui/button/index";
+import { Input } from "@/components/ui/input/index";
 
-  let email = "";
-  let loading = false;
-  let formStatus = "";
+let email = "";
+let loading = false;
+let formStatus = "";
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    loading = true;
-    formStatus = "";
+const handleSubmit = async (e) => {
+	e.preventDefault();
+	loading = true;
+	formStatus = "";
 
-    try {
-      console.log(email);
-      const response = await fetch("/api/sendEmail.json", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-        }),
-      });
+	try {
+		console.log(email);
+		const response = await fetch("/api/sendEmail.json", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				email: email,
+			}),
+		});
 
-      if (response.ok) {
-        const data = await response.json();
-        if (data.message === "Subscription successful") {
-          formStatus = "success";
-          setTimeout(() => {
-            formStatus = "";
-          }, 2000);
-        } else {
-          formStatus = "error";
-          setTimeout(() => {
-            formStatus = "";
-          }, 2000);
-        }
-      } else {
-        formStatus = "error";
-        setTimeout(() => {
-          formStatus = "";
-        }, 2000);
-      }
-    } catch (err) {
-      console.error(err);
-      formStatus = "error";
-      setTimeout(() => {
-        formStatus = "";
-      }, 2000);
-    } finally {
-      loading = false;
-      email = "";
-    }
-  };
+		if (response.ok) {
+			const data = await response.json();
+			if (data.message === "Subscription successful") {
+				formStatus = "success";
+				setTimeout(() => {
+					formStatus = "";
+				}, 2000);
+			} else {
+				formStatus = "error";
+				setTimeout(() => {
+					formStatus = "";
+				}, 2000);
+			}
+		} else {
+			formStatus = "error";
+			setTimeout(() => {
+				formStatus = "";
+			}, 2000);
+		}
+	} catch (err) {
+		console.error(err);
+		formStatus = "error";
+		setTimeout(() => {
+			formStatus = "";
+		}, 2000);
+	} finally {
+		loading = false;
+		email = "";
+	}
+};
 </script>
 
 <div
@@ -82,6 +82,7 @@
               autocorrect="off"
               disabled={loading}
               bind:value={email}
+              class="dark text-white"
               required
             />
           </div>

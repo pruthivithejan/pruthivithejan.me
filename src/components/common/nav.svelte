@@ -1,66 +1,66 @@
 <script lang="ts">
-  import navData from "@/data/navData";
-  import { onMount } from "svelte";
-  import * as Command from "@/components/ui/command/index";
-  import * as Drawer from "@/components/ui/drawer/index";
+import navData from "@/data/navData";
+import { onMount } from "svelte";
+import * as Command from "@/components/ui/command/index";
+import * as Drawer from "@/components/ui/drawer/index";
 
-  import { Button } from "@/components/ui/button/index";
-  import {
-    Smile,
-    LibraryBig,
-    Layers3,
-    Github,
-    User,
-    Linkedin,
-    ExternalLink,
-    Twitter,
-    PanelTopClose,
-  } from "lucide-svelte";
-  let open = false;
-  import { Separator } from "@/components/ui/separator/index";
+import { Button } from "@/components/ui/button/index";
+import {
+	Smile,
+	LibraryBig,
+	Layers3,
+	Github,
+	User,
+	Linkedin,
+	ExternalLink,
+	Twitter,
+	PanelTopClose,
+} from "lucide-svelte";
+let open = false;
+import { Separator } from "@/components/ui/separator/index";
 
-  onMount(() => {
-    function handleKeydown(e: KeyboardEvent) {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        open = !open;
-      }
-    }
+onMount(() => {
+	function handleKeydown(e: KeyboardEvent) {
+		if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+			e.preventDefault();
+			open = !open;
+		}
+	}
 
-    document.addEventListener("keydown", handleKeydown);
-    return () => {
-      document.removeEventListener("keydown", handleKeydown);
-    };
-  });
-  let links;
+	document.addEventListener("keydown", handleKeydown);
+	return () => {
+		document.removeEventListener("keydown", handleKeydown);
+	};
+});
+let links;
 
-  const x = (d: { goal: number; id: number }) => d.id;
-  const y = (d: { goal: number; id: number }) => d.goal;
+const x = (d: { goal: number; id: number }) => d.id;
+const y = (d: { goal: number; id: number }) => d.goal;
 
-  let goal = 350;
+let goal = 350;
 
-  function handleClick(adjustment: number) {
-    goal = Math.max(200, Math.min(400, goal + adjustment));
-  }
+function handleClick(adjustment: number) {
+	goal = Math.max(200, Math.min(400, goal + adjustment));
+}
 
-  onMount(() => {
-    links = document.querySelectorAll("ul a");
-    links.forEach((link) => {
-      if (link.href === window.location.href) {
-        link.classList.add(
-          "bg-neutral-100",
-          "rounded-md",
-          "text-neutral-950",
-          "font-semibold",
-          "shadow-md",
-          "shadow-neutral-100/10",
-          "shadow-inner",
-          "py-1.5",
-          "px-4"
-        );
-      }
-    });
-  });
+onMount(() => {
+	links = document.querySelectorAll("ul a");
+	links.forEach((link) => {
+		if (link.href === window.location.href) {
+			link.classList.add(
+				"bg-neutral-100",
+				"rounded-md",
+				"text-neutral-950",
+				"font-semibold",
+				"shadow-md",
+				"shadow-neutral-100/10",
+				"shadow-inner",
+				"py-1.5",
+				"px-4",
+			);
+		}
+	});
+});
 </script>
 
 <div class="flex justify-center">

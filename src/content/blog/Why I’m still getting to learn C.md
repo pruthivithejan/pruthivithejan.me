@@ -1,6 +1,7 @@
 ---
 title: Why I’m still getting to learn C
 date: 2023-05-09
+edited: 2024-07-03
 image: { src: "/images/post-1.png", alt: "A picture of C logo" }
 description: In 2023 where most of the programming is done by languages like JavaScript and Python, Why C is still tough in colleges.
 draft: false
@@ -8,6 +9,13 @@ category: Programming Languages
 ---
 
 # Why C Still Matters in 2024: A Programmer's Perspective
+
+```c
+int main() {
+  printf("Hello World!");
+  return 0;
+}
+```
 
 C, one of the granddaddies of programming languages, might seem like a relic compared to the shiny, feature-rich languages of today. But don't be fooled by its age. C remains a relevant and powerful tool for programmers in 2024, and here's why:
 

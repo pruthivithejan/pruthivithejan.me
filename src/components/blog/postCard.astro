@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 import { slugify, formatDate } from "@/lib/utils";
 
@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button/index";
 import { Badge } from "@/components/ui/badge/index";
 
 const { data, url, TagType } = Astro.props;
-
 
 const { category, title, date, image, description } = data;
 ---
