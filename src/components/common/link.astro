@@ -40,13 +40,13 @@ const {
 >
   {
     icon && icon.side === "left" && (
-      <Icon name={icon.name} height={icon.width} width={icon.height} />
+      <Icon name={icon.name} x-height={icon.width} widths={icon.height} />
     )
   }
   <span>{text}</span>
   {
     icon && icon.side === "right" && (
-      <Icon name={icon.name} height={icon.width} width={icon.height} />
+      <Icon name={icon.name} x-height={icon.width} widths={icon.height} />
     )
   }
 </a>

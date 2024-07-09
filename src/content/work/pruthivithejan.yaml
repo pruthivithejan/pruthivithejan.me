@@ -1,5 +1,5 @@
 work_id: 1
-work_name: pruthivithejan.me
+work_name: Portfolio
 work_description: My personal website
 img: /images/work/pruthivithejan.png
 status: ongoing
@@ -8,8 +8,8 @@ details:
   repo: https://github.com/pruthivithejan/pruthivithejan.me
   tech_stack:
     - name: Astro
-      icon: https://example.com/icons/vuejs.png
+      icon: /images/work/icons/astro.svg
     - name: Svelte
-      icon: https://example.com/icons/django.png
+      icon: /images/work/icons/svelte.svg
     - name: TailwindCSS
-      icon: https://example.com/icons/django.png
+      icon: /images/work/icons/tailwindcss.svg

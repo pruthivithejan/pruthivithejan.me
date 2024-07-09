@@ -1,0 +1,15 @@
+work_id: 4
+work_name: Touch The Peak
+work_description: J'pura Annual Job Fair & Entrepreneurial Ventures
+img: /images/work/started.png
+status: started
+details:
+  url: 
+  repo: https://github.com/University-Of-Sri-Jayewardenepura/touchthepeak
+  tech_stack:
+    - name: Next.js
+      icon: /images/work/icons/nextjs.svg
+    - name: Tailwind CSS
+      icon: /images/work/icons/tailwindcss.svg
+    - name: Framer Motion
+      icon: /images/work/icons/framermotion.svg

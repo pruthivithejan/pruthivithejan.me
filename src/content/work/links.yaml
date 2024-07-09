@@ -8,6 +8,6 @@ details:
   repo: https://github.com/pruthivithejan/links
   tech_stack:
     - name: React
-      icon: https://example.com/icons/vuejs.png
+      icon: /images/work/icons/react.svg
     - name: Vite
-      icon: https://example.com/icons/django.png
+      icon: /images/work/icons/vite.svg

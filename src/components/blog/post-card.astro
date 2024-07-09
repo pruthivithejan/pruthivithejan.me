@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+
+import { slugify, formatDate } from "@/lib/utils";
+
+import * as Card from "@/components/ui/card/index";
+import { Button } from "@/components/ui/button/index";
+import { Badge } from "@/components/ui/badge/index";
+
+const { data, url } = Astro.props;
+
+const { category, title, date, image, description } = data;
+---
+
+<div class="glass-container col-span-1 lg:col-span-1 w-full animate-enter" style="--stagger: 2">
+<a href={url} transition:name="blog-title">
+  <Card.Root class="dark h-full">
+      <Image
+      src={image.src}
+      alt={image.alt}
+      width="400"
+      height="240"
+      decoding="async"
+      loading="lazy"
+      format="webp"
+      quality={100}
+     class="w-full object-cover aspect-[40:21] rounded-t-lg border-b"
+     />
+      <Card.Content class="p-6 space-y-4">
+        <Card.Title class="text-2xl bg-gradient-to-br from-neutral-50 to-neutral-400 bg-clip-text text-transparent">{title}</Card.Title>
+        <div class="flex flex-row items-start justify-between">
+          <small class="text-white/70">
+            {formatDate(date)}
+          </small>
+          <Badge variant="outline" href={`/blog/category/${slugify(category)}/`}>
+            #{category}
+          </Badge>
+        </div>
+      <Card.Description>{description}</Card.Description>
+    </Card.Content>
+  </Card.Root>
+</a>
+</div>
+

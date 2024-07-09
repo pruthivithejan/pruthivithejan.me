@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	text?: string;
+	icon?: string;
+}
+
+const { text, icon } = Astro.props as Props;
+---
+
+<button
+  class="group relative grid overflow-hidden rounded-full bg-foreground px-4 py-2 shadow-[0_1000px_0_0_hsl(0,0%,20%)_inset] transition-all duration-250 hover:scale-105"
+>
+  <span class="absolute inset-0">
+    <span
+      class="absolute inset-0 overflow-hidden rounded-full rotate-0 [mask-image:linear-gradient(#fafafa,transparent_50%)] animate-[flip_6s_infinite_steps(2,end)]"
+    >
+      <span
+        class="spark-inner absolute w-[200%] aspect-square top-0 left-1/2 z-[-1] -translate-x-1/2 -translate-y-[15%] rotate-0 opacity-100 [background:conic-gradient(from_0deg,transparent_0_340deg,#fafafa_360deg)] transition-opacity duration-250 animate-[rotate_3s_linear_infinite_both]"
+      ></span>
+    </span>
+  </span>
+  <span
+    class="backdrop absolute inset-[1px] rounded-full bg-foreground transition-all duration-250 group-hover:bg-[#171717]"
+  ></span>
+
+  <span class="text relative z-10 text-neutral-100">
+    
+    {
+        icon && (
+          <Icon name={icon} x-height={16} widths={16}  class="mr-2 inline-block" />
+        )
+    }
+    {text}
+  </span>
+</button>

@@ -168,6 +168,11 @@ declare module 'astro:content' {
   collection: "work";
   data: any
 };
+"touchthepeak": {
+	id: "touchthepeak";
+  collection: "work";
+  data: any
+};
 };
 
 	};

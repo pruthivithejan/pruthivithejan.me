@@ -1,15 +1,15 @@
 work_id: 3
-work_name: jesa.lk
+work_name: JESA
 work_description: J'pura Employability Skills Award
 img: /images/work/jesa.png
-status: finished
+status: ongoing
 details:
   url: https://jesa.lk
   repo: https://github.com/University-Of-Sri-Jayewardenepura/jesa
   tech_stack:
     - name: Next.js
-      icon: https://example.com/icons/vuejs.png
+      icon: /images/work/icons/nextjs.svg
     - name: Tailwind CSS
-      icon: https://example.com/icons/django.png
+      icon: /images/work/icons/tailwindcss.svg
     - name: Framer Motion
-      icon: https://example.com/icons/django.png
+      icon: /images/work/icons/framermotion.svg

@@ -30,3 +30,16 @@
     transition-delay: 0s !important;
   }
 }
+
+/* Spark Button Animation */
+@keyframes flip {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(90deg);
+  }
+}

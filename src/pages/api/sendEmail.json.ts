@@ -25,6 +25,7 @@ export const POST: APIRoute = async ({ request }) => {
 					statusText: "OK",
 				},
 			);
+			// biome-ignore lint/style/noUselessElse: <explanation>
 		} else {
 			return new Response(JSON.stringify({ message: "Subscription failed" }), {
 				status: 500,

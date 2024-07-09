@@ -7,7 +7,7 @@ const { category, title, date, edited, image } = Astro.props;
 
 <header class="pb-6 flex flex-col items-center justify-center">
   <div class="mt-24 text-white font-body pb-4 mb-10">
-    <h1 class="scroll-m-20 text-center text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-neutral-50 to-neutral-500 bg-clip-text text-transparent pb-6" transition:name="blog-title">{title}</h1>
+    <h1 class="scroll-m-20 max-w-3xl text-center text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-neutral-50 to-neutral-500 bg-clip-text text-transparent pb-6" transition:name="blog-title">{title}</h1>
     <div class="flex flex-col space-y-6 items-center">
     <span>
       <a href={`/blog/category/${slugify(category)}/`} class="border-t-[1px] border-x-[.5px] bg-gradient-to-b from-neutral-700 to-neutral-800 rounded-md py-1 px-2"

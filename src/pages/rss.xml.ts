@@ -8,10 +8,10 @@ async function generateRssFeed() {
 
 	const rssContent = await rss({
 		title: "Pruthivi Thejan’s Blog",
-		description: "Blog of a boy named after the planet earth.",
+		description: "Blog of a boy named after the planet Earth.",
 		site: import.meta.env.SITE,
 		items: posts.map((post) => ({
-			link: post.slug,
+			link: `/blog/${post.slug}`,
 			title: post.data.title,
 			pubDate: post.data.date,
 			description: post.data.description,

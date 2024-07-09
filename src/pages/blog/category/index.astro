@@ -25,13 +25,13 @@ const processedCategories = allCategories.reduce((acc, category) => {
 const showCount = true;
 ---
 
-<Main title="Categories">
-  <section class="container min-h-screen pt-16" aria-label="Blog post categories">
+<Main title="Blog Categories | Pruthivi Thejan ">
+  <section class="container min-h-screen max-w-4xl pt-16" aria-label="Blog post categories">
   <Heading text="Blog Catergories"/>
     <div class="post-container pt-12">
       {
         Object.entries(processedCategories).map(([key, val]) => (
-          <li class=" text-neutral-100 list-none" >
+          <li class=" text-neutral-100 list-none mt-4" >
             <a href={`/blog/category/${slugify(key)}`} class="pb-4 flex items-center gap-2">
               <h2 class="uppercase text-2xl hover:underline">{key}</h2>
               {showCount && <Badge variant="secondary" class="font-bold">{val}</Badge>}

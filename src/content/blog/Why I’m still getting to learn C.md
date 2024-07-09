@@ -2,7 +2,7 @@
 title: Why I’m still getting to learn C
 date: 2023-05-09
 edited: 2024-07-03
-image: { src: "/images/post-1.png", alt: "A picture of C logo" }
+image: { src: "/images/blog/C.png", alt: "A picture of C logo" }
 description: In 2023 where most of the programming is done by languages like JavaScript and Python, Why C is still tough in colleges.
 draft: false
 category: Programming Languages
