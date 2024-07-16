@@ -1,10 +1,24 @@
 ---
-import MovieList from "@/components/shelf/movie-list.svelte";
+import Heading from "@/components/common/heading.astro";
 import Main from "@/layout/main.astro";
 ---
 
 <Main title="Shelf | Pruthivi Thejan ">
-    <div class="px-4 md:px-6 text-white font-body h-screen pt-24">
-          <MovieList/>
+    <div class="h-full min-h-screen">
+      <section
+        class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20"
+      >
+        <!-- <a href="https://gitlab.com/users/pruthivithejan/projects" target="_blank" class="animate-enter" style="--stagger: 1" >
+          <SparkButton text="Learning Projects" icon="social/gitlab"/>
+        </a> -->
+        <Heading text="Shelf"/>
+        <p
+          class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl text-balance animate-enter"
+          style="--stagger: 1"
+        >
+          I'm thrilled to showcase some of my recent projects that demonstrate my passion for crafting intuitive user experiences and robust, efficient software solutions.
+        </p>
+      </section>
+        
     </div>
-</Main>
+  </Main>
