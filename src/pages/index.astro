@@ -12,6 +12,7 @@ import PostCard from "@/components/blog/post-card.astro";
 
 import * as Carousel from "@/components/ui/carousel/index.js";
 import { Separator } from "@/components/ui/separator";
+import Newsletter from "@/components/newsletter-card.svelte";
 
 const allPosts = await getCollection("blog");
 const formattedPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts, {
@@ -23,9 +24,10 @@ const formattedPosts: CollectionEntry<"blog">[] = formatBlogPosts(allPosts, {
   <div class="min-h-screen text-white font-heading mt-16 text-center">
   <section>
     <div class="h-50 bg-dot-neutral-50/[0.2]">
-    <div class="hidden md:flex absolute pointer-events-none inset-0 items-center justify-center bg-neutral-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/>
+    <!-- <div class="hidden md:flex absolute pointer-events-none inset-0 items-center justify-center bg-neutral-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/> -->
     <Hero />
   </section>
+  <Newsletter client:visible />
   <!-- <section>
 <h2 class="text-2xl">New Blog Posts</h2>
 <div class="container">

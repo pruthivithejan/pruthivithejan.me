@@ -18,11 +18,11 @@ const {
 
 <html lang="en">
   <Head {title} {description} {image} {data} {robots} />
-  <body class="antialiased mx-auto bg-neutral-950 font-body min-h-screen flex flex-col ">
-    <Nav client:load />
-    <main class="">
+  <body class="antialiased mx-auto bg-neutral-950 font-body min-h-screen flex flex-col items-center">
+    <main class="max-w-6xl w-full">
       <slot>Default</slot>
     </main>
+    <Nav client:load />
     <Footer />
   </body>
 </html>

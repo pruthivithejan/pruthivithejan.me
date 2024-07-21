@@ -14,7 +14,7 @@
 </script>
 
 <section
-  class="grid grid-cols-1 gap-6 px-8 py-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+  class="grid grid-cols-1 gap-6 px-8 py-8 sm:grid-cols-2 lg:grid-cols-3 mx-auto"
 >
   {#if works.length > 0}
     {#each works as work (work.id)}

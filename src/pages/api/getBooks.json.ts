@@ -3,7 +3,7 @@ import Parser from "rss-parser";
 
 const parser = new Parser();
 
-export const GET: APIRoute = async ({ request }) => {
+export const GET: APIRoute = async () => {
 	const feedUrl =
 		"https://www.goodreads.com/review/list_rss/178774351?shelf=read";
 

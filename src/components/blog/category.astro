@@ -21,7 +21,7 @@ const processedCategories = allCategories.reduce((acc, category) => {
 const { showCount } = Astro.props;
 ---
 
-<ul class="flex gap-2 ">
+<ul class="flex gap-2">
   {
     Object.entries(processedCategories).map(([key, val]) => (
       <li>

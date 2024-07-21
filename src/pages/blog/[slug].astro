@@ -6,6 +6,7 @@ import Category from "@/components/blog/category.astro";
 import Related from "@/components/blog/related.astro";
 
 import { formatBlogPosts } from "@/lib/utils";
+import Newsletter from "@/components/newsletter-card.svelte";
 
 export async function getStaticPaths() {
 	const allPosts = await getCollection("blog");
@@ -61,13 +62,14 @@ const relatedPosts = formattedPosts
     </div>
   </div>
     <div class="py-6">
-      <section class="text-neutral-50 flex items-center gap-2 flex-col p-4 pt-12" aria-label="Blog categories">
+      <section class="text-neutral-50 flex items-center gap-2 flex-col p-4 pb-12 pt-12" aria-label="Blog categories">
         <span class="text-muted-foreground select-none">&#10045;&nbsp;&#10045;&nbsp;&#10045;</span>
         <a href="/blog/category/">
           <h2 class="text-md font-semibold uppercase ">Blog Categories</h2>
         </a>
         <Category showCount={false} />
-      </section >
+      </section>
+      <Newsletter client:load />
       {
         relatedPosts.length > 0 && (
           <aside class="text-white flex justify-center gap-2 flex-row p-4" aria-label="Related categories">

@@ -25,9 +25,9 @@ const catPosts = formattedPosts.filter(
 
 <Main title={name}>
   <section class="mt-24 text-white font-body min-h-screen" aria-label={`Posts about ${name}`}>
-    <h2 class="font-heading text-center text-muted-foreground text-3xl md:text-5xl">Posts About</h2>
+    <h2 class="font-italic text-center text-muted-foreground text-3xl md:text-5xl">Posts About</h2>
     <Heading text={name}/>
-    <div class="py-16 mx-auto md:px-12 lg:px-32 max-w-7xl">
+    <div class="py-16 mx-auto ">
     <div class="grid grid-cols-1 gap-6 px-8 py-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
       {
         catPosts.map((post) => (

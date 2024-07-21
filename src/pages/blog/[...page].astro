@@ -6,7 +6,6 @@ import PostCard from "@/components/blog/post-card.astro";
 import Category from "@/components/blog/category.astro";
 import Pagination from "@/components/blog/pagination.astro";
 import SparkButton from "@/components/animated/spark-button.astro";
-import Heading from "@/components/common/heading.astro";
 import { formatBlogPosts } from "../../lib/utils";
 
 export async function getStaticPaths({ paginate }) {
@@ -25,20 +24,19 @@ const { page } = Astro.props;
 <Main title="Blog | Pruthivi Thejan " >
   <section class="text-neutral-50" aria-label="Blog Posts">
     <div
-    class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20"
+    class="mx-auto flex max-w-5xl flex-col items-center gap-2 py-8 md:py-12 lg:py-24"
   >
   <a href={page.data[0].slug} class="animate-enter" style="--stagger: 1" >
     <SparkButton text="Read Latest Post"/>
   </a>
-  <Heading text="Blog Posts"/>
+  <h1 class="animate-enter heading">Blog Posts</h1>
     <p
       class="subheading animate-enter"
       style="--stagger: 1"
     > Weekly topics cover tech trends, software, and productivity. Beyond grammar fixes, the aim is knowledge expansion and writing refinement. Quality over quantity is prioritized.
     </p>
-  </div>
-  <div class="">
-    <div class="grid grid-cols-1 gap-6 px-8 py-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+  
+  <div class="grid grid-cols-1 gap-6 px-8 py-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
       {
         page.data.map((post: { data: any; slug: any; }) => (
           <PostCard
@@ -49,8 +47,8 @@ const { page } = Astro.props;
           />
         ))
       }
-      </div>
   </div>
+  </div> 
   <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
   <section class="text-neutral-50 flex items-center gap-2 flex-col p-4 pt-12" aria-label="Blog categories">

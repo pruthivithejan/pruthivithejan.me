@@ -10,7 +10,7 @@
   });
 </script>
 
-<div class="px-8 py-24 pt-0 mx-auto md:px-12 lg:px-32 max-w-7xl">
+<div class="px-8 py-24 pt-0 mx-auto md:px-12 lg:px-32">
   <div class="container grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
     {#each books as book}
       <div
