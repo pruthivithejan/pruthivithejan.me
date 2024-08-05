@@ -7,8 +7,6 @@ import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import svelte from "@astrojs/svelte";
 
-import db from "@astrojs/db";
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://pruthivithejan.me",
@@ -16,16 +14,22 @@ export default defineConfig({
   adapter: cloudflare(),
   resolve: {
     alias: {
-      $lib: path.resolve("./src/lib")
-    }
+      $lib: path.resolve("./src/lib"),
+    },
   },
-  integrations: [sitemap(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), partytown({
-    config: {
-      forward: ["dataLayer.push"]
-    }
-  }), svelte(), icon(), db()]
+  integrations: [
+    sitemap(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+    svelte(),
+    icon(),
+  ],
 });
