@@ -3,7 +3,6 @@ import { getCollection, type CollectionEntry } from "astro:content";
 // component imports
 import Main from "@/layout/main.astro";
 import PostCard from "@/components/blog/post-card.astro";
-import Heading from "@/components/common/heading.astro";
 // utils
 import { slugify, formatBlogPosts } from "@/lib/utils";
 import categories from "@/data/categories";
@@ -25,8 +24,8 @@ const catPosts = formattedPosts.filter(
 
 <Main title={name}>
   <section class="mt-24 text-white font-body min-h-screen" aria-label={`Posts about ${name}`}>
-    <h2 class="font-italic text-center text-muted-foreground text-3xl md:text-5xl">Posts About</h2>
-    <Heading text={name}/>
+    <h2 class="font-italic text-center text-muted-foreground text-3xl md:text-5xl animate-enter">Posts About</h2>
+    <h1 class="heading animate-enter"       style="--stagger: 1">{name}</h1>
     <div class="py-16 mx-auto ">
     <div class="grid grid-cols-1 gap-6 px-8 py-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
       {
