@@ -33,15 +33,6 @@
   // biome-ignore lint/suspicious/noImplicitAnyLet: <explanation>
   let links;
 
-  const x = (d: { goal: number; id: number }) => d.id;
-  const y = (d: { goal: number; id: number }) => d.goal;
-
-  let goal = 350;
-
-  function handleClick(adjustment: number) {
-    goal = Math.max(200, Math.min(400, goal + adjustment));
-  }
-
   onMount(() => {
     links = document.querySelectorAll("ul a");
     // biome-ignore lint/complexity/noForEach: <explanation>
@@ -112,7 +103,7 @@
                   Subdomains</Drawer.Description
                 >
                 <Button
-                  href="https:links.pruthivithejan.me"
+                  href="https://links.pruthivithejan.me/"
                   target="_blank"
                   class="flex justify-start gap-2"
                 >
