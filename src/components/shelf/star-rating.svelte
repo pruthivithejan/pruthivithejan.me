@@ -1,11 +1,11 @@
 <script>
-  export let rating;
+export let rating;
 
-  $: adjustedRating = Math.max(1, Math.min(5, rating));
-  $: stars = Array.from({ length: 5 }, (_, index) => ({
-    id: index,
-    fill: index < adjustedRating ? "white" : "none",
-  }));
+$: adjustedRating = Math.max(1, Math.min(5, rating));
+$: stars = Array.from({ length: 5 }, (_, index) => ({
+	id: index,
+	fill: index < adjustedRating ? "white" : "none",
+}));
 </script>
 
 <div class="flex gap-1">

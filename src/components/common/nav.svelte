@@ -156,7 +156,7 @@
       </Command.Group>
       <Command.Separator />
       <Command.Group heading="Subdomains">
-        <a href="https:links.pruthivithejan.me" target="_blank">
+        <a href="https://links.pruthivithejan.me/" target="_blank">
           <Command.Item>
             <ExternalLink class="mr-2 h-4 w-4" />
             <span>links.pruthivithejan.me</span>

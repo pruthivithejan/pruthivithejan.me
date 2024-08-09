@@ -1,16 +1,16 @@
 <script>
-  import * as Card from "@/components/ui/card/index";
-  import { Button } from "@/components/ui/button/index";
-  import { Badge } from "@/components/ui/badge/index";
-  import { Skeleton } from "@/components/ui/skeleton";
-  import { onMount } from "svelte";
-  let works = [];
+import * as Card from "@/components/ui/card/index";
+import { Button } from "@/components/ui/button/index";
+import { Badge } from "@/components/ui/badge/index";
+import { Skeleton } from "@/components/ui/skeleton";
+import { onMount } from "svelte";
+let works = [];
 
-  onMount(async () => {
-    const res = await fetch("/api/getWork.json");
-    const data = await res.json();
-    works = data.map((work) => ({ ...work }));
-  });
+onMount(async () => {
+	const res = await fetch("/api/getWork.json");
+	const data = await res.json();
+	works = data.map((work) => ({ ...work }));
+});
 </script>
 
 <section

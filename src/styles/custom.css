@@ -29,7 +29,7 @@
 }
 
 .subheading {
-  @apply max-w-xl mx-auto text-center text-lg text-muted-foreground md:leading-loose;
+  @apply max-w-md text-center text-base text-neutral-400 md:max-w-xl md:text-lg;
 }
 
 

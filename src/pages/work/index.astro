@@ -2,7 +2,6 @@
 import SparkButton from "@/components/animated/spark-button.astro";
 import Main from "@/layout/main.astro";
 import Work from "@/components/works-card.svelte";
-import Heading from "@/components/common/heading.astro";
 ---
 
 <Main title="Work | Pruthivi Thejan ">
@@ -13,7 +12,7 @@ import Heading from "@/components/common/heading.astro";
       <a href="https://gitlab.com/users/pruthivithejan/projects" target="_blank" class="animate-enter" style="--stagger: 1" >
         <SparkButton text="Learning Projects" icon="social/gitlab"/>
       </a>
-      <Heading text="Recent Work"/>
+      <h1 class="heading animate-enter">Recent Work</h1>
       <p
         class="subheading animate-enter"
         style="--stagger: 1"

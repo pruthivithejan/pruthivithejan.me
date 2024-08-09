@@ -1,13 +1,13 @@
 <script>
-  import { onMount } from "svelte";
-  import StarRating from "./star-rating.svelte";
-  let books = [];
+import { onMount } from "svelte";
+import StarRating from "./star-rating.svelte";
+let books = [];
 
-  onMount(async () => {
-    const res = await fetch("/api/getBooks.json");
-    const data = await res.json();
-    books = data.map((book) => ({ ...book, loading: true }));
-  });
+onMount(async () => {
+	const res = await fetch("/api/getBooks.json");
+	const data = await res.json();
+	books = data.map((book) => ({ ...book, loading: true }));
+});
 </script>
 
 <div class="px-8 py-24 pt-0 mx-auto md:px-12 lg:px-32">
