@@ -26,7 +26,7 @@ import { BookIcon, PodcastIcon, VideoIcon, TvIcon } from "lucide-svelte";
               { category: "Movies", link: "/movies", icon: <VideoIcon class="h-10 w-10" />, description: <p class="text-muted-foreground">Explore our curated selection of captivating movies.</p> },
               { category: "TV Shows", link: "/tv-shows", icon: <TvIcon class="h-10 w-10" />, description: <p class="text-muted-foreground">Discover our collection of must-watch TV shows.</p> },
               ].map((item, index) => (
-              <a href={`${item.link}`} class="group" key={index}>
+              <a href={`/shelf/${item.link}`} class="group" key={index}>
               <div class="relative h-full rounded-lg glass-container text-neutral-100 bg-neutral-950 p-6 shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
               <div class="absolute inset-0 rounded-lg opacity-50 transition-all duration-300 group-hover:opacity-100" />
               <div class="relative z-10 flex flex-col items-start gap-4">
