@@ -23,6 +23,7 @@ export const GET: APIRoute = async () => {
 			const imageUrl = imageMatch
 				? imageMatch[1]
 						.replace("_SY75_", "")
+						.replace("_SX50_", "")
 						.replace(/\.+null\.jpg$/, ".jpg")
 						.replace(/\.\.jpg$/, ".jpg")
 				: null;
