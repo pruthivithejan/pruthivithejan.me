@@ -3,7 +3,7 @@ title: Why Are We Still Learning C
 date: 2023-05-09
 edited: 2024-08-26
 image: { src: "/images/blog/C.png", alt: "A picture of C logo" }
-description: C is still getting taught in 2024. They cll it the language that shaped modern programming. 
+description: C is still getting taught in 2024. It's called as the language that shaped modern programming. 
 draft: false
 category: Programming Languages
 ---

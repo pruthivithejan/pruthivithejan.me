@@ -6,9 +6,7 @@
 	"exports": {
 		"./biome": "./biome.json"
 	},
-	"browerslist": [
-		"defaults"
-	],
+	"browerslist": ["defaults"],
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -31,7 +29,6 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"cmdk-sv": "^0.0.17",
-		"embla-carousel-svelte": "^8.3.0",
 		"lucide-svelte": "^0.356.0",
 		"mode-watcher": "^0.2.2",
 		"next-themes": "^0.2.1",
