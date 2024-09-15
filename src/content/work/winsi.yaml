@@ -1,11 +1,11 @@
-work_id: 3
-work_name: JESA
-work_description: J'pura Employability Skills Award
-img: /images/work/jesa.webp
-status: finished
+work_id: 5
+work_name: Winsi
+work_description: Sinhala-English Encyclopedia
+img: /images/work/winsi.webp
+status: started
 details:
-  url: https://jesa.lk
-  repo: https://github.com/University-Of-Sri-Jayewardenepura/jesa
+  url: https://winsi.lk
+  repo: 
   tech_stack:
     - name: Next.js
       icon: /images/work/icons/nextjs.svg

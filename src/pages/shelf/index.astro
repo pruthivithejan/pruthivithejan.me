@@ -24,7 +24,7 @@ import { BookIcon, PodcastIcon, VideoIcon, TvIcon } from "lucide-svelte";
               { category: "Books", link: "/books", icon: <BookIcon class="h-10 w-10" />, description: <p class="text-muted-foreground">Dive into our collection of captivating books across genres.</p> },
               { category: "Podcasts", link: "/podcasts", icon: <PodcastIcon class="h-10 w-10" />, description: <p class="text-muted-foreground">Tune in to our engaging and informative podcast episodes.</p> },
               { category: "Movies", link: "/movies", icon: <VideoIcon class="h-10 w-10" />, description: <p class="text-muted-foreground">Explore our curated selection of captivating movies.</p> },
-              { category: "TV Shows", link: "/tv-shows", icon: <TvIcon class="h-10 w-10" />, description: <p class="text-muted-foreground">Discover our collection of must-watch TV shows.</p> },
+              { category: "TV Shows", link: "/tv", icon: <TvIcon class="h-10 w-10" />, description: <p class="text-muted-foreground">Discover our collection of must-watch TV shows.</p> },
               ].map((item, index) => (
               <a href={`/shelf/${item.link}`} class="group" key={index}>
               <div class="relative h-full rounded-lg glass-container text-neutral-100 bg-neutral-950 p-6 shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
