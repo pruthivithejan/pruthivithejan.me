@@ -1,6 +1,6 @@
 # Pruthivi Thejan - pruthivithejan.me
 
-<img src="public/images/image-default.jpg" alt="Preview">
+<img src="public/images/image-default.png" alt="Preview">
 
 <p align="center">
   <br/>
@@ -22,13 +22,9 @@
 - <a href="https://shadcn-svelte.com/">shadcn-svelte</a>
 - <a href="https://tailwindcss.com/">Tailwind CSS</a>
 
-### Performance
-
-- <a href="https://partytown.builder.io/">Partytown</a>
-
 ### Analytics
 
-- <a href="https://analytics.google.com/">Google Analytics</a>
+- <a href="https://openpanel.dev/">Openpanel</a>
 
 ### Deployment
 
