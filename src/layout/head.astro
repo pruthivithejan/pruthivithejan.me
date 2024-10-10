@@ -16,12 +16,4 @@ const { title, description, image, data, robots } = Astro.props;
   <SEO {title} {description} url={Astro.url} {image} {data} {robots} />
   <!-- Pinterest Verification Tag -->
   <meta name="p:domain_verify" content="e93fa39fecd18ec8c449ab6bc4df3c03"/>
-  <!-- Google tag (gtag.js) -->
-  <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-M3H2QEVCXY"></script>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-M3H2QEVCXY');
-  </script>
 </head>
